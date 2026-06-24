@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>i.MX Security Explorer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════════════════════ -->
+  <!-- HEADER: Site branding, version display, and CSV export controls                                -->
+  <!-- ══════════════════════════════════════════════════════════════════════════════════════════════ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Site title -->
+      <span class="header-title">i.MX Security Explorer</span>
+      <!-- Version number (populated dynamically) -->
+      <span class="header-version" id="siteVersion"></span>
+
+      <!-- ── CSV export controls ─────────────────────────────── -->
+      <div class="header-export">
+        <!-- Dropdown to select which SoC to export -->
+        <select id="exportSocSelect" class="export-select" aria-label="Select SoC for export">
+          <option value="">Select SoC to export…</option>
+        </select>
+        <!-- Button to trigger CSV download (enabled when SoC is selected) -->
+        <button id="exportCsvBtn" class="export-btn" disabled>
+          ⬇ Export CSV
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════════════════════ -->
+  <!-- MAIN LAYOUT: Two-panel design (left sidebar + right content area)                              -->
+  <!-- ══════════════════════════════════════════════════════════════════════════════════════════════ -->
+  <div class="layout">
+
+    <!-- ── Left: SoC selector ───────────────────────────────── -->
+    <aside class="panel-left">
+      <!-- Search input for filtering SoCs -->
+      <div class="panel-search">
+        <input type="text" id="socSearch" class="search-input" placeholder="Search SoCs…" autocomplete="off">
+      </div>
+      <!-- Family filter tabs (e.g., i.MX 8, i.MX 9, etc.) -->
+      <div class="family-tabs" id="familyTabs"></div>
+      <!-- List of available SoCs -->
+      <div class="soc-list" id="socList"></div>
+    </aside>
+
+    <!-- ── Right: Content ───────────────────────────────────── -->
+    <main class="panel-right">
+
+      <!-- ────────────────────────────────────────────────────────────────────────────────────────── -->
+      <!-- View 1: Placeholder shown when no SoC is selected                                          -->
+      <!-- ────────────────────────────────────────────────────────────────────────────────────────── -->
+      <div id="viewPlaceholder" class="placeholder">
+        <div class="placeholder-inner">
+          <p class="placeholder-title">Select a SoC</p>
+          <p class="placeholder-sub">Choose a device from the left panel to browse its security documentation.</p>
+        </div>
+      </div>
+
+      <!-- ────────────────────────────────────────────────────────────────────────────────────────── -->
+      <!-- View 2: SoC overview — displays use cases and features for the selected SoC                -->
+      <!-- ────────────────────────────────────────────────────────────────────────────────────────── -->
+      <div id="viewSoc" class="hidden">
+        <!-- SoC header: name, description, and family badge -->
+        <div class="detail-header">
+          <div>
+            <!-- SoC name (e.g., "i.MX 8M Plus") -->
+            <h1 id="detailName"></h1>
+            <!-- SoC description -->
+            <p  id="detailDesc" class="detail-desc"></p>
+          </div>
+          <!-- Family badge (e.g., "i.MX 8") -->
+          <span id="detailFamily" class="family-badge"></span>
+        </div>
+
+        <!-- Use Cases section -->
+        <section class="overview-section">
+          <h2 class="section-title section-title--usecase">Use Cases</h2>
+          <!-- Grid of use case cards (populated dynamically) -->
+          <div class="cards-grid" id="usecaseCards"></div>
+          <!-- Empty state message when no use cases exist -->
+          <p  class="empty-section hidden" id="emptyUsecases">No use cases available for this SoC.</p>
+        </section>
+
+        <!-- Visual separator between sections -->
+        <div class="partition"></div>
+
+        <!-- Features section -->
+        <section class="overview-section">
+          <h2 class="section-title section-title--feature">Features</h2>
+          <!-- Grid of feature cards (populated dynamically) -->
+          <div class="cards-grid" id="featureCards"></div>
+          <!-- Empty state message when no features exist -->
+          <p  class="empty-section hidden" id="emptyFeatures">No features available for this SoC.</p>
+        </section>
+      </div>
+
+      <!-- ────────────────────────────────────────────────────────────────────────────────────────── -->
+      <!-- View 3: Document list — shows documents for a selected use case or feature                 -->
+      <!-- ────────────────────────────────────────────────────────────────────────────────────────── -->
+      <div id="viewDocs" class="hidden">
+        <!-- Breadcrumb navigation -->
+        <div class="breadcrumb">
+          <!-- Back button to return to SoC overview -->
+          <button class="back-btn" id="backBtn">← Back</button>
+          <!-- Current SoC name -->
+          <span class="breadcrumb-soc"     id="breadcrumbSoc"></span>
+          <!-- Separator -->
+          <span class="breadcrumb-sep">›</span>
+          <!-- Current use case or feature name -->
+          <span class="breadcrumb-current" id="breadcrumbCurrent"></span>
+        </div>
+
+        <!-- Document view header -->
+        <div class="doc-view-header">
+          <!-- Title (e.g., "Secure Boot Documents") -->
+          <h2 id="docViewTitle"></h2>
+          <!-- Document count badge -->
+          <span id="docViewCount" class="doc-count"></span>
+        </div>
+
+        <!-- List of documents (populated dynamically) -->
+        <div id="docList" class="doc-list"></div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════════════════════ -->
+  <!-- SCRIPTS: Data injection point and main application logic                                       -->
+  <!-- ══════════════════════════════════════════════════════════════════════════════════════════════ -->
+  <!-- Placeholder for injected JSON data (replaced during build) -->
+  <script>/* __INJECT_DATA__ */</script>
+  <!-- Main application JavaScript -->
+  <script src="js/app.js"></script>
+</body>
+</html>

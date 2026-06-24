@@ -1,0 +1,479 @@
+/* ── Reset ───────────────────────────────────────────────────── */
+/* Reset default browser styles for consistent rendering */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Tokens ──────────────────────────────────────────────────── */
+/* CSS custom properties for colors, spacing, and effects */
+:root {
+  /* Navy color palette */
+  --navy:       #1a2332;
+  --navy-lt:    #243044;
+  /* Blue color palette */
+  --blue:       #0066cc;
+  --blue-lt:    #e8f1fb;
+  --blue-dk:    #0052a3;
+  /* Green color palette for success/use case states */
+  --green-bg:   #f0fdf4;
+  --green-bd:   #bbf7d0;
+  --green-tx:   #166534;
+  /* Purple color palette */
+  --purple-bg:  #faf5ff;
+  --purple-bd:  #e9d5ff;
+  --purple-tx:  #6b21a8;
+  /* Gray scale palette */
+  --gray-50:    #f8f9fa;
+  --gray-100:   #f1f3f5;
+  --gray-200:   #dee2e6;
+  --gray-400:   #adb5bd;
+  --gray-600:   #6c757d;
+  --gray-900:   #212529;
+  /* Border radius values */
+  --radius:     6px;
+  --radius-lg:  10px;
+  /* Shadow effects */
+  --shadow-sm:  0 1px 2px rgba(0,0,0,.08);
+  --shadow:     0 2px 6px rgba(0,0,0,.10);
+}
+
+/* ── Base ────────────────────────────────────────────────────── */
+/* Base typography and layout for html and body */
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  color: var(--gray-900);
+  background: var(--gray-50);
+}
+/* Flexbox layout to enable sticky header and scrollable content */
+body { display: flex; flex-direction: column; }
+
+/* ── Header ──────────────────────────────────────────────────── */
+/* Main site header with dark navy background */
+.site-header {
+  background: var(--navy);
+  color: #fff;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+  z-index: 10;
+}
+
+/* ── CSV Export controls in site header ─────────────────────────────────── */
+
+/* Container for header content with flexible layout */
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Export controls container aligned to the right */
+.header-export {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;   /* push the controls to the right edge */
+}
+
+/* Dropdown select for choosing export options */
+.export-select {
+  height: 2rem;
+  padding: 0 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  color: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  min-width: 180px;
+}
+
+/* Dark background for dropdown options for better readability */
+.export-select option {
+  background: #1e2a38;   /* dark background so options are readable */
+  color: #fff;
+}
+
+/* Focus state for export select */
+.export-select:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 1px;
+}
+
+/* Export button styling */
+.export-btn {
+  height: 2rem;
+  padding: 0 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.18);
+  color: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+/* Hover state for export button */
+.export-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.30);
+}
+
+/* Disabled state for export button */
+.export-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+/* Header title and version text */
+.header-title   { font-size: 17px; font-weight: 700; letter-spacing: .2px; }
+.header-version { font-size: 11px; color: rgba(255,255,255,.45); }
+
+/* ── Layout ──────────────────────────────────────────────────── */
+/* Main layout container with two-panel design */
+.layout { display: flex; flex: 1; overflow: hidden; }
+
+/* ── Left panel ──────────────────────────────────────────────── */
+/* Left sidebar containing search, filters, and SoC list */
+.panel-left {
+  width: 260px;
+  flex-shrink: 0;
+  background: #fff;
+  border-right: 1px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Search input container */
+.panel-search { padding: 10px; border-bottom: 1px solid var(--gray-200); }
+
+/* Search input field styling */
+.search-input {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: var(--gray-900);
+  outline: none;
+  transition: border-color .15s;
+}
+/* Focus state for search input */
+.search-input:focus { border-color: var(--blue); }
+
+/* Family tabs */
+/* Container for family filter tabs */
+.family-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--gray-200);
+}
+/* Individual family tab button */
+.family-tab {
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--gray-200);
+  background: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all .15s;
+}
+/* Hover state for family tab */
+.family-tab:hover  { border-color: var(--blue); color: var(--blue); }
+/* Active state for selected family tab */
+.family-tab.active { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+/* SoC list */
+/* Scrollable list of SoC items */
+.soc-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+/* Individual SoC item in the list */
+.soc-item {
+  padding: 9px 12px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all .15s;
+}
+/* Hover state for SoC item */
+.soc-item:hover  { background: var(--blue-lt); border-color: var(--gray-200); }
+/* Active/selected state for SoC item */
+.soc-item.active { background: var(--blue); border-color: var(--blue); color: #fff; }
+/* ID text color when SoC item is active */
+.soc-item.active .soc-item-id { color: rgba(255,255,255,.65); }
+/* Hidden state for filtered out items */
+.soc-item.hidden { display: none; }
+/* SoC name text */
+.soc-item-name { font-size: 13px; font-weight: 600; }
+/* SoC ID text */
+.soc-item-id   { font-size: 11px; color: var(--gray-600); margin-top: 1px; }
+
+/* ── Right panel ─────────────────────────────────────────────── */
+/* Main content area on the right side */
+.panel-right {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px;
+  background: var(--gray-50);
+}
+
+/* ── View 1: Placeholder ─────────────────────────────────────── */
+/* Empty state shown when no SoC is selected */
+.placeholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Inner container for placeholder content */
+.placeholder-inner { text-align: center; }
+/* Placeholder title text */
+.placeholder-title { font-size: 17px; font-weight: 600; color: var(--gray-600); margin-bottom: 6px; }
+/* Placeholder subtitle text */
+.placeholder-sub   { font-size: 13px; color: var(--gray-400); }
+
+/* ── Detail header (views 2 & 3) ─────────────────────────────── */
+/* Header section for detail views */
+.detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+/* Main heading in detail header */
+.detail-header h1 { font-size: 22px; font-weight: 700; }
+/* Description text in detail header */
+.detail-desc      { font-size: 13px; color: var(--gray-600); margin-top: 4px; }
+
+/* Badge showing the SoC family */
+.family-badge {
+  flex-shrink: 0;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--navy);
+  color: rgba(255,255,255,.85);
+  margin-top: 4px;
+}
+
+/* ── View 2: SoC overview ────────────────────────────────────── */
+/* Section container in overview */
+.overview-section { margin-bottom: 28px; }
+
+/* Section title styling */
+.section-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--gray-200);
+  color: var(--gray-600);
+}
+/* Use case section title variant */
+.section-title--usecase { color: var(--green-tx); border-color: var(--green-bd); }
+/* Feature section title variant */
+.section-title--feature { color: var(--blue);     border-color: #bfdbfe; }
+
+/* Visual separator between sections */
+.partition {
+  height: 1px;
+  background: var(--gray-200);
+  margin: 8px 0 28px;
+}
+
+/* Empty state message for sections with no content */
+.empty-section {
+  font-size: 13px;
+  color: var(--gray-400);
+  padding: 10px 0;
+}
+
+/* Cards grid */
+/* Responsive grid layout for overview cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+/* Individual card in overview grid */
+.overview-card {
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-left: 3px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .15s, border-color .15s, transform .1s;
+  outline: none;
+  user-select: none;
+}
+/* Hover and focus states for overview card */
+.overview-card:hover,
+.overview-card:focus        { box-shadow: var(--shadow); transform: translateY(-1px); }
+/* Use case card variant with green accent */
+.overview-card--usecase     { border-left-color: var(--green-bd); }
+/* Feature card variant with blue accent */
+.overview-card--feature     { border-left-color: #bfdbfe; }
+
+/* Card content elements */
+.card-name  { font-size: 13px; font-weight: 600; color: var(--gray-900); line-height: 1.3; }
+.card-desc  { font-size: 12px; color: var(--gray-600); margin-top: 5px; line-height: 1.4; }
+.card-count {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gray-400);
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--gray-100);
+}
+
+/* ── View 3: Document list ───────────────────────────────────── */
+
+/* Breadcrumb */
+/* Navigation breadcrumb for document view */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: var(--gray-600);
+}
+/* Back button in breadcrumb */
+.back-btn {
+  padding: 4px 10px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  background: #fff;
+  font-size: 12px;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all .15s;
+}
+/* Hover state for back button */
+.back-btn:hover       { border-color: var(--blue); color: var(--blue); }
+/* SoC name in breadcrumb */
+.breadcrumb-soc       { font-weight: 600; color: var(--gray-900); }
+/* Separator in breadcrumb */
+.breadcrumb-sep       { color: var(--gray-400); }
+/* Current location in breadcrumb */
+.breadcrumb-current   { color: var(--gray-600); }
+
+/* Doc view header */
+/* Header for document list view */
+.doc-view-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+/* Heading in document view header */
+.doc-view-header h2 { font-size: 18px; font-weight: 700; }
+/* Document count indicator */
+.doc-count          { font-size: 12px; color: var(--gray-600); }
+
+/* Doc list */
+/* Container for list of documents */
+.doc-list { display: flex; flex-direction: column; gap: 8px; }
+
+/* Doc card */
+/* Individual document card */
+.doc-card {
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: box-shadow .15s, border-color .15s;
+  outline: none;
+}
+/* Hover and focus states for document card */
+.doc-card:hover,
+.doc-card:focus { box-shadow: var(--shadow); border-color: var(--gray-400); }
+
+/* Top section of document card with title and badge */
+.doc-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+/* Document title */
+.doc-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blue);
+  line-height: 1.4;
+}
+/* Badge showing document type */
+.doc-type-badge {
+  flex-shrink: 0;
+  padding: 2px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--gray-100);
+  color: var(--gray-600);
+  border: 1px solid var(--gray-200);
+  white-space: nowrap;
+}
+/* Document description text */
+.doc-description {
+  font-size: 12px;
+  color: var(--gray-600);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+/* Container for document metadata tags */
+.doc-meta { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+
+/* Tags */
+/* Base tag styling */
+.tag {
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+}
+/* Feature tag variant with blue styling */
+.tag-feature { background: var(--blue-lt);  color: var(--blue);     border: 1px solid #bfdbfe; }
+/* Use case tag variant with green styling */
+.tag-usecase { background: var(--green-bg); color: var(--green-tx); border: 1px solid var(--green-bd); }
+
+/* Empty / no-docs state */
+/* Message shown when no documents are available */
+.no-docs {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--gray-600);
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+}
+
+/* ── Utility ─────────────────────────────────────────────────── */
+/* Utility class to hide elements */
+.hidden { display: none !important; }
