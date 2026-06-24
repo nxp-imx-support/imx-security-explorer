@@ -1,0 +1,29 @@
+{
+  "name": "imx-security-explorer",
+  "version": "0.0.1",
+  "description": "i.MX Security Explorer — static site",
+
+  "_comment_scripts": {
+    "build":     "Run build.js: reads data/*.yaml + data/documents/*.yaml, injects a JSON dataset into src/index.html, copies CSS/JS → dist/",
+    "dev":       "Build then serve dist/ locally at http://localhost:3000 using npx serve (no install required)",
+    "clean":     "Remove dist/ and Python bytecode caches from admin/ (safe to run at any time)",
+    "clean:all": "Full reset — also removes node_modules/ and admin/venv/. Run 'npm install' and recreate the Python venv afterwards",
+    "rebuild":   "Clean then build in one step — useful when YAML data or template changes aren't picked up by a normal build"
+  },
+
+  "scripts": {
+    "build":     "node build.js",
+    "dev":       "node build.js && npx serve dist",
+    "clean":     "node clean.js",
+    "clean:all": "node clean.js --all",
+    "rebuild":   "node clean.js && node build.js"
+  },
+
+  "_comment_dependencies": "No runtime dependencies — the site ships plain HTML/CSS/JS with no Node.js backend.",
+
+  "_comment_devDependencies": "js-yaml is used only by build.js to parse YAML data files at build time. It is not shipped to the browser.",
+
+  "devDependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
