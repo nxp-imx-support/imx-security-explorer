@@ -113,6 +113,28 @@ for (const filename of fs.readdirSync(DOCS_DIR).sort()) {
   console.log(`  ✓ ${filename} (${(data.documents || []).length} docs)`);
 }
 
+// ── NEW: Expand 'all_soc' keyword ────────────────────────────────────────────
+
+const allSocIds = socs.map(s => s.id);
+
+// Validate that we have SoCs before expanding
+if (allSocIds.length === 0) {
+  console.error('  ERROR: No SoCs found in socs.yaml. Cannot expand all_soc.');
+  process.exit(1);
+}
+
+let expandedCount = 0;
+for (const doc of documents) {
+  if (doc.soc && doc.soc.includes('all_soc')) {
+    doc.soc = allSocIds;
+    expandedCount++;
+  }
+}
+
+if (expandedCount > 0) {
+  console.log(`  ✓ Expanded 'all_soc' in ${expandedCount} document(s)`);
+}
+
 // ── Step 4: Assemble the combined dataset ─────────────────────────────────────
 //
 // This object is serialised as JSON and injected verbatim into index.html.

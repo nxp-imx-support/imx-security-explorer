@@ -13,12 +13,13 @@
   <!-- ══════════════════════════════════════════════════════════════════════════════════════════════ -->
   <header class="site-header">
     <div class="header-inner">
-      <!-- Site title -->
-      <span class="header-title">i.MX Security Explorer</span>
-      <!-- Version number (populated dynamically) -->
-      <span class="header-version" id="siteVersion"></span>
+      <!-- Left group: Title and version -->
+      <div class="header-left">
+        <span class="header-title">i.MX Security Explorer</span>
+        <span class="header-version" id="siteVersion"></span>
+      </div>
 
-      <!-- ── CSV export controls ─────────────────────────────── -->
+      <!-- Right group: CSV export controls -->
       <div class="header-export">
         <!-- Dropdown to select which SoC to export -->
         <select id="exportSocSelect" class="export-select" aria-label="Select SoC for export">

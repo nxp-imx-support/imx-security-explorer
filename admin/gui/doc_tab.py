@@ -63,7 +63,7 @@ from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QTableWidget, QTableWidgetItem,
     QPushButton, QDialog, QFormLayout, QLineEdit, QComboBox, QListWidget,
     QDialogButtonBox, QMessageBox, QHeaderView, QAbstractItemView, QLabel,
-    QSplitter, QGroupBox, QTextEdit
+    QSplitter, QGroupBox, QTextEdit, QListWidgetItem
 )
 from PySide6.QtCore import Qt
 from utils import load_config, load_socs, DOCS_DIR
@@ -319,10 +319,25 @@ class DocDialog(QDialog):
 
         # ── SoC multi-select list ─────────────────────────────────────────────
         current_socs = doc.get("soc") or [] if doc else []
+
         self.soc_list = QListWidget()
         self.soc_list.setSelectionMode(QAbstractItemView.MultiSelection)
-        self.soc_list.setFixedHeight(80)
+        self.soc_list.setFixedHeight(120)  # Taller to fit "All SoCs" option
         self._soc_ids = []
+
+        # Add "All SoCs" as the first option
+        self.soc_list.addItem("✓ All SoCs")
+        self._soc_ids.append("all_soc")
+        if "all_soc" in current_socs:
+            self.soc_list.item(0).setSelected(True)
+
+        # Add a visual separator
+        separator = QListWidgetItem("─────────────────────────────────")
+        separator.setFlags(Qt.NoItemFlags)  # Not selectable
+        self.soc_list.addItem(separator)
+        self._soc_ids.append(None)  # Placeholder for separator
+
+        # Add individual SoCs
         for s in socs:
             self.soc_list.addItem(f"{s['id']} — {s.get('name', '')}")
             self._soc_ids.append(s["id"])
@@ -411,10 +426,17 @@ class DocDialog(QDialog):
             self._usecase_ids[self.usecase_list.row(item)]
             for item in self.usecase_list.selectedItems()
         ]
-        selected_socs = [
-            self._soc_ids[self.soc_list.row(item)]
-            for item in self.soc_list.selectedItems()
-        ]
+        selected_socs = []
+        for item in self.soc_list.selectedItems():
+            row = self.soc_list.row(item)
+            soc_id = self._soc_ids[row]
+            if soc_id is not None:  # Skip separator
+                selected_socs.append(soc_id)
+
+        # Smart behavior: If 'all_soc' is selected, ignore individual selections
+        if 'all_soc' in selected_socs:
+            selected_socs = ['all_soc']
+
         return {
             "id":          self.id_edit.text().strip(),
             "title":       self.title_edit.text().strip(),
