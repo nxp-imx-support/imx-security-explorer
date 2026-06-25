@@ -63,7 +63,7 @@ from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QTableWidget, QTableWidgetItem,
     QPushButton, QDialog, QFormLayout, QLineEdit, QComboBox, QListWidget,
     QDialogButtonBox, QMessageBox, QHeaderView, QAbstractItemView, QLabel,
-    QSplitter, QGroupBox, QTextEdit, QListWidgetItem
+    QSplitter, QGroupBox, QTextEdit, QListWidgetItem, QTabWidget
 )
 from PySide6.QtCore import Qt
 from utils import load_config, load_socs, DOCS_DIR
@@ -187,8 +187,6 @@ def get_feature_filepath(feature_id: str) -> str:
 
     Raises ValueError if the id is invalid or the resolved path escapes DOCS_DIR.
     """
-    # FIX: was r'^[\w\-]+```' — markdown fence backticks corrupted the closing
-    # anchor, causing ValueError for every valid feature_id.
     if not re.match(r'^[\w\-]+$', feature_id or ""):
         raise ValueError(f"Invalid feature_id: '{feature_id}'")
     path = os.path.join(DOCS_DIR, f"{feature_id}.yaml")
@@ -449,22 +447,97 @@ class DocDialog(QDialog):
             "_feature":    self.feature_combo.currentData(),
         }
 
-
 # ── Tab widget ────────────────────────────────────────────────────────────────
 
 class DocTab(QWidget):
     """
     Top-level widget for the "Documents" tab.
 
-    State
-    -----
-    all_docs : list[dict]
-        Flat snapshot of all documents loaded from DOCS_DIR at the last
-        refresh().  Each entry has the synthetic _feature and _filepath keys.
+    Creates a sub-tab for each feature, where each sub-tab shows only the
+    documents belonging to that feature. Tab labels show document counts
+    that update automatically after add/edit/delete operations.
     """
 
     def __init__(self):
         super().__init__()
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(0, 0, 0, 0)
+
+        # Create sub-tabs for features
+        self.feature_tabs = QTabWidget()
+
+        # Load features from config
+        config = load_config()
+        features = config.get("features", [])
+
+        if not features:
+            # No features defined — show a placeholder
+            placeholder = QLabel("No features defined in config.yaml")
+            placeholder.setAlignment(Qt.AlignCenter)
+            layout.addWidget(placeholder)
+            return
+
+        # Store feature table widgets
+        self.feature_tables = {}
+
+        # Load all documents once to count them
+        all_docs = load_all_documents()
+
+        # Create one sub-tab per feature
+        for feature in features:
+            feature_id = feature["id"]
+            feature_name = feature["name"]
+
+            # Count documents for this feature
+            doc_count = len([d for d in all_docs if d.get("_feature") == feature_id])
+
+            # Create a table widget for this feature
+            table_widget = FeatureDocTable(feature_id, feature_name, self)
+            self.feature_tables[feature_id] = table_widget
+
+            # Add as a tab with document count
+            tab_label = f"{feature_name} ({doc_count})"
+            self.feature_tabs.addTab(table_widget, tab_label)
+
+        layout.addWidget(self.feature_tabs)
+
+    def refresh_tab_counts(self) -> None:
+        """
+        Refresh the document count in all tab labels.
+
+        Called after add/edit/delete operations to keep counts accurate.
+        """
+        all_docs = load_all_documents()
+
+        for idx in range(self.feature_tabs.count()):
+            widget = self.feature_tabs.widget(idx)
+            if isinstance(widget, FeatureDocTable):
+                feature_id = widget.feature_id
+                feature_name = widget.feature_name
+                doc_count = len([d for d in all_docs if d.get("_feature") == feature_id])
+
+                # Update tab label
+                tab_label = f"{feature_name} ({doc_count})"
+                self.feature_tabs.setTabText(idx, tab_label)
+
+
+# ── Feature-specific document table ──────────────────────────────────────────
+
+class FeatureDocTable(QWidget):
+    """
+    Document table for a single feature.
+
+    Shows only documents belonging to the specified feature.
+    Provides Add/Edit/Delete operations scoped to this feature.
+    """
+
+    def __init__(self, feature_id: str, feature_name: str, parent_tab=None):
+        super().__init__()
+        self.feature_id = feature_id
+        self.feature_name = feature_name
+        self.parent_tab = parent_tab  # Reference to DocTab for refreshing counts
+        self.all_docs = []
+
         main_layout = QVBoxLayout(self)
 
         splitter = QSplitter(Qt.Vertical)
@@ -478,9 +551,9 @@ class DocTab(QWidget):
         top_layout.setContentsMargins(0, 0, 0, 0)
 
         self.table = QTableWidget()
-        self.table.setColumnCount(6)
+        self.table.setColumnCount(5)  # Removed "Feature" column since it's implicit
         self.table.setHorizontalHeaderLabels([
-            "Title", "Doc Type", "Feature", "Use-Cases", "SoCs", "URL"
+            "Title", "Doc Type", "Use-Cases", "SoCs", "URL"
         ])
         self.table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.table.setSelectionBehavior(QTableWidget.SelectRows)
@@ -492,30 +565,27 @@ class DocTab(QWidget):
         splitter.addWidget(top_widget)
 
         # ── Bottom pane: read-only detail panel ───────────────────────────────
-        detail_box  = QGroupBox("Details")
+        detail_box = QGroupBox("Details")
         detail_form = QFormLayout(detail_box)
 
-        self.detail_id       = QLineEdit(); self.detail_id.setReadOnly(True)
-        self.detail_title    = QLineEdit(); self.detail_title.setReadOnly(True)
-        self.detail_desc     = QLineEdit(); self.detail_desc.setReadOnly(True)
+        self.detail_id = QLineEdit(); self.detail_id.setReadOnly(True)
+        self.detail_title = QLineEdit(); self.detail_title.setReadOnly(True)
+        self.detail_desc = QLineEdit(); self.detail_desc.setReadOnly(True)
         self.detail_doc_type = QLineEdit(); self.detail_doc_type.setReadOnly(True)
-        self.detail_url      = QLineEdit(); self.detail_url.setReadOnly(True)
-        self.detail_image    = QLineEdit(); self.detail_image.setReadOnly(True)
-        self.detail_feature  = QLineEdit(); self.detail_feature.setReadOnly(True)
+        self.detail_url = QLineEdit(); self.detail_url.setReadOnly(True)
+        self.detail_image = QLineEdit(); self.detail_image.setReadOnly(True)
         self.detail_usecases = QLineEdit(); self.detail_usecases.setReadOnly(True)
-        # QTextEdit for SoCs so long lists wrap gracefully.
-        self.detail_socs     = QTextEdit(); self.detail_socs.setReadOnly(True)
+        self.detail_socs = QTextEdit(); self.detail_socs.setReadOnly(True)
         self.detail_socs.setFixedHeight(48)
 
-        detail_form.addRow("ID:",          self.detail_id)
-        detail_form.addRow("Title:",       self.detail_title)
+        detail_form.addRow("ID:", self.detail_id)
+        detail_form.addRow("Title:", self.detail_title)
         detail_form.addRow("Description:", self.detail_desc)
-        detail_form.addRow("Doc Type:",    self.detail_doc_type)
-        detail_form.addRow("URL:",         self.detail_url)
-        detail_form.addRow("Image:",       self.detail_image)
-        detail_form.addRow("Feature:",     self.detail_feature)
-        detail_form.addRow("Use-Cases:",   self.detail_usecases)
-        detail_form.addRow("SoCs:",        self.detail_socs)
+        detail_form.addRow("Doc Type:", self.detail_doc_type)
+        detail_form.addRow("URL:", self.detail_url)
+        detail_form.addRow("Image:", self.detail_image)
+        detail_form.addRow("Use-Cases:", self.detail_usecases)
+        detail_form.addRow("SoCs:", self.detail_socs)
 
         splitter.addWidget(detail_box)
         splitter.setStretchFactor(0, 3)
@@ -524,8 +594,8 @@ class DocTab(QWidget):
 
         # ── Buttons ───────────────────────────────────────────────────────────
         btn_layout = QHBoxLayout()
-        self.add_btn    = QPushButton("Add")
-        self.edit_btn   = QPushButton("Edit")
+        self.add_btn = QPushButton("Add")
+        self.edit_btn = QPushButton("Edit")
         self.delete_btn = QPushButton("Delete")
         for btn in (self.add_btn, self.edit_btn, self.delete_btn):
             btn.setFixedWidth(90)
@@ -537,32 +607,40 @@ class DocTab(QWidget):
         self.edit_btn.clicked.connect(self.edit_doc)
         self.delete_btn.clicked.connect(self.delete_doc)
 
-        self.all_docs = []
         self.refresh()
 
     # ── Data ──────────────────────────────────────────────────────────────────
 
     def refresh(self) -> None:
-        """Reload all document files and repopulate the table."""
-        self.all_docs = load_all_documents()
+        """Reload documents for this feature and repopulate the table."""
+        all_docs = load_all_documents()
+
+        # Filter to only this feature's documents
+        self.all_docs = [d for d in all_docs if d.get("_feature") == self.feature_id]
+
         self.table.setRowCount(len(self.all_docs))
         for row, doc in enumerate(self.all_docs):
-            socs      = ", ".join(doc.get("soc") or [])
+            socs = ", ".join(doc.get("soc") or [])
             use_cases = doc.get("use-case") or []
             if isinstance(use_cases, str):
                 use_cases = [use_cases]
             uc_str = ", ".join(use_cases) if use_cases else "—"
+
             values = [
                 doc.get("title", ""),
                 doc.get("doc_type", ""),
-                doc.get("_feature", ""),
                 uc_str,
                 socs,
                 doc.get("url", ""),
             ]
             for col, val in enumerate(values):
                 self.table.setItem(row, col, QTableWidgetItem(val))
+
         self._clear_detail()
+
+        # Update tab counts in parent
+        if self.parent_tab:
+            self.parent_tab.refresh_tab_counts()
 
     # ── Detail panel helpers ──────────────────────────────────────────────────
 
@@ -570,7 +648,7 @@ class DocTab(QWidget):
         for field in (
             self.detail_id, self.detail_title, self.detail_desc,
             self.detail_doc_type, self.detail_url, self.detail_image,
-            self.detail_feature, self.detail_usecases,
+            self.detail_usecases,
         ):
             field.clear()
         self.detail_socs.clear()
@@ -581,7 +659,7 @@ class DocTab(QWidget):
         if row is None or row >= len(self.all_docs):
             self._clear_detail()
             return
-        doc       = self.all_docs[row]
+        doc = self.all_docs[row]
         use_cases = doc.get("use-case") or []
         if isinstance(use_cases, str):
             use_cases = [use_cases]
@@ -593,7 +671,6 @@ class DocTab(QWidget):
         self.detail_doc_type.setText(doc.get("doc_type", ""))
         self.detail_url.setText(doc.get("url", ""))
         self.detail_image.setText(doc.get("image", ""))
-        self.detail_feature.setText(doc.get("_feature", ""))
         self.detail_usecases.setText(", ".join(use_cases) if use_cases else "—")
         self.detail_socs.setPlainText(", ".join(socs) if socs else "—")
 
@@ -605,26 +682,30 @@ class DocTab(QWidget):
     # ── CRUD operations ───────────────────────────────────────────────────────
 
     def add_doc(self) -> None:
-        """Open the Add dialog; on acceptance append the new doc to the feature file."""
+        """Open the Add dialog with this feature pre-selected."""
         try:
             dialog = DocDialog(self)
         except Exception as exc:
             QMessageBox.critical(self, "Configuration Error",
-                                 f"Failed to open dialog:\n{exc}\n\n"
-                                 "Check that config.yaml and socs.yaml are valid.")
+                                  f"Failed to open dialog:\n{exc}\n\n"
+                                  "Check that config.yaml and socs.yaml are valid.")
             return
+
+        # Pre-select this feature in the dialog
+        idx = dialog.feature_combo.findData(self.feature_id)
+        if idx >= 0:
+            dialog.feature_combo.setCurrentIndex(idx)
+            # Lock the feature combo so user can't change it
+            dialog.feature_combo.setEnabled(False)
 
         if dialog.exec() == QDialog.Accepted:
             data = dialog.get_data()
 
-            feature_id = data.get("_feature")
-            if not feature_id:
-                QMessageBox.warning(self, "Error",
-                                    "No feature selected. Add a Feature first.")
-                return
+            # Ensure the feature is set correctly
+            data["_feature"] = self.feature_id
 
             try:
-                filepath = get_feature_filepath(feature_id)
+                filepath = get_feature_filepath(self.feature_id)
             except ValueError as exc:
                 QMessageBox.critical(self, "Error", str(exc))
                 return
@@ -642,10 +723,10 @@ class DocTab(QWidget):
 
             docs.append(data)
             try:
-                save_document_file(filepath, feature_id, docs)
+                save_document_file(filepath, self.feature_id, docs)
             except Exception as exc:
                 QMessageBox.critical(self, "Save Error",
-                                     f"Failed to save document:\n{exc}")
+                                      f"Failed to save document:\n{exc}")
                 return
             self.refresh()
 
@@ -663,30 +744,29 @@ class DocTab(QWidget):
             QMessageBox.information(self, "Info", "Select a document to edit.")
             return
 
-        existing    = self.all_docs[row]
-        old_feature = existing["_feature"]
-        filepath    = existing["_filepath"]
+        existing = self.all_docs[row]
+        filepath = existing["_filepath"]
 
         try:
             dialog = DocDialog(self, doc=existing)
         except Exception as exc:
             QMessageBox.critical(self, "Configuration Error",
-                                 f"Failed to open dialog:\n{exc}\n\n"
-                                 "Check that config.yaml and socs.yaml are valid.")
+                                  f"Failed to open dialog:\n{exc}\n\n"
+                                  "Check that config.yaml and socs.yaml are valid.")
             return
 
+        # Lock the feature combo (can't move documents between features in this UI)
+        dialog.feature_combo.setEnabled(False)
+
         if dialog.exec() == QDialog.Accepted:
-            updated     = dialog.get_data()
-            new_feature = updated["_feature"]
+            updated = dialog.get_data()
+            updated["_feature"] = self.feature_id  # Ensure feature doesn't change
 
             try:
-                new_filepath = get_feature_filepath(new_feature)
+                _, docs = load_feature_file(filepath)
 
-                # Step 1: load both source files before making any changes.
-                _, old_docs = load_feature_file(filepath)
-
-                # Stale-document guard — the doc may have been deleted externally.
-                if not any(d.get("id") == existing.get("id") for d in old_docs):
+                # Stale-document guard
+                if not any(d.get("id") == existing.get("id") for d in docs):
                     QMessageBox.warning(
                         self, "Stale Selection",
                         f"Document '{existing.get('id')}' no longer exists.\n"
@@ -695,33 +775,14 @@ class DocTab(QWidget):
                     self.refresh()
                     return
 
-                _, new_docs = load_feature_file(new_filepath)
+                # Replace the document in-place
+                docs = [updated if d.get("id") == existing.get("id") else d for d in docs]
 
-                # Step 2: prepare the updated lists in memory only.
-                old_docs_updated = [
-                    d for d in old_docs if d.get("id") != existing.get("id")
-                ]
-                if new_feature == old_feature:
-                    # Same feature — replace in-place.
-                    new_docs_updated = old_docs_updated + [updated]
-                else:
-                    # Different feature — append to new file.
-                    new_docs_updated = new_docs + [updated]
-
-                # Step 3: write.  Write the new feature file first so that if
-                # this fails, the old file is still intact.
-                if new_feature != old_feature:
-                    save_document_file(new_filepath, new_feature, new_docs_updated)
-                save_document_file(
-                    filepath, old_feature,
-                    old_docs_updated if new_feature != old_feature
-                    else new_docs_updated
-                )
-
+                save_document_file(filepath, self.feature_id, docs)
             except Exception as exc:
                 QMessageBox.critical(self, "Save Error",
-                                     f"Failed to save changes:\n{exc}\n\n"
-                                     "No data was lost.")
+                                      f"Failed to save changes:\n{exc}\n\n"
+                                      "No data was lost.")
                 return
 
             self.refresh()
@@ -739,7 +800,7 @@ class DocTab(QWidget):
             QMessageBox.information(self, "Info", "Select a document to delete.")
             return
 
-        doc    = self.all_docs[row]
+        doc = self.all_docs[row]
         doc_id = doc.get("id")
         if not doc_id:
             QMessageBox.warning(self, "Error",
@@ -759,7 +820,7 @@ class DocTab(QWidget):
                 QMessageBox.critical(self, "Error", str(exc))
                 return
 
-            # Stale-document guard.
+            # Stale-document guard
             if not any(d.get("id") == doc_id for d in docs):
                 QMessageBox.warning(
                     self, "Stale Selection",
@@ -774,6 +835,6 @@ class DocTab(QWidget):
                 save_document_file(filepath, feature, docs)
             except Exception as exc:
                 QMessageBox.critical(self, "Save Error",
-                                     f"Failed to delete document:\n{exc}")
+                                      f"Failed to delete document:\n{exc}")
                 return
             self.refresh()
