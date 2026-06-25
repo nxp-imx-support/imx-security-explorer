@@ -148,3 +148,9 @@ deactivate
 ### Admin Tool
 
 > The admin tool writes directly to the `data/` YAML files.
+
+---
+
+## Submitting Patches
+
+To contribute changes to the project, review CONTRIBUTING.md.
