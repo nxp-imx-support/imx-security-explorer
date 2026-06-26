@@ -1,0 +1,58 @@
+feature: optee
+documents:
+- id: imx-porting-guide-optee
+  title: i.MX Porting Guide - Configuring OP-TEE
+  description: Guide to OP-TEE enablement on various i.MX devices. Available to customers
+    under NDA. Refer to the Configuring OP-TEE chapter.
+  doc_type: User Guide
+  url: https://docs.nxp.com/bundle/UG10165/page/topics/config_optee.html
+  image: ''
+  soc:
+  - all_soc
+  use-case: []
+- id: optee-getting-started-training
+  title: Getting Started with OP-TEE on i.MX Processors
+  doc_type: Training
+  url: https://www.nxp.com/design/training/trusted-execution-environment-getting-started-with-op-tee-on-i-mx-processors:TIP-TRUSTED-EXECUTION-ENVIRONMENT-GETTING-STARTED
+  description: Webinar on getting started with Trusted Execution Environments (TEE)
+    and OP-TEE enablement on various i.MX devices.
+  image: ''
+  soc:
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  - imx8qm
+  - imx8qxp
+  - imx8dxl
+  - imx8ulp
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []
+- id: enhanced-openssl-optee-src
+  title: Enhanced OpenSSL Using OP-TEE - Source Code
+  doc_type: Other
+  url: https://github.com/nxp-imx-support/imx_sec_apps/tree/master/enhanced-openssl
+  description: Source code for enhanced OpenSSL using OP-TEE and CAAM on i.MX processors.
+  image: ''
+  soc:
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  use-case: []
+- id: an12632
+  title: Enhanced OpenSSL on i.MX 8M and i.MX 8MM
+  description: Describes how to add support for accelerated OP-TEE OS with CAAM on
+    top of OpenSSL.
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN12632&location=null
+  image: ''
+  soc:
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  use-case: []

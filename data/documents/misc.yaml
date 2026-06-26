@@ -1,0 +1,156 @@
+feature: miscellaneous
+documents:
+- id: an12263
+  title: HABv4 RVT Guidelines and Recommendations
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN12263&location=null
+  description: 'Extending the Root of Trust: the HAB API allows the HAB library to
+    authenticate additional software images. Describes system considerations when
+    planning to use this API.'
+  image: ''
+  soc:
+  - imx6sl
+  - imx6sll
+  - imx6s
+  - imx6dl
+  - imx6q
+  - imx6qp
+  - imx6sx
+  - imx6ul
+  - imx6ull
+  - imx6ulz
+  - imx7d
+  - imx7ulp
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  use-case: []
+- id: hab-persistent-memory
+  title: HABv4 Persistent Memory Address Regions for i.MX Application Processors
+  doc_type: Other
+  url: https://community.nxp.com/t5/Known-Limitations-and-Guidelines/HAB-Persistent-memory-in-various-MPU-and-MCU-chipsets/ta-p/1117689
+  description: HAB persistent memory is used by HAB to store logs. Base address and
+    size are provided for each processor.
+  image: ''
+  soc:
+  - imx6sl
+  - imx6sll
+  - imx6s
+  - imx6dl
+  - imx6q
+  - imx6qp
+  - imx6sx
+  - imx6ul
+  - imx6ull
+  - imx6ulz
+  - imx7d
+  - imx7ulp
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  use-case: []
+- id: habv4-device-recovery
+  title: HABv4 Closed Device Recovery Using UUU
+  doc_type: Other
+  url: https://github.com/NXPmicro/mfgtools/wiki/UUU-default-support-protocol-list#habv4-closed-chip-support
+  description: Certain i.MX devices require the DCD pointer in IVT to be cleared before
+    signing the recovery image. Describes this procedure for closed HABv4 devices.
+  image: ''
+  soc:
+  - imx6sl
+  - imx6sll
+  - imx6s
+  - imx6dl
+  - imx6q
+  - imx6qp
+  - imx6sx
+  - imx6ul
+  - imx6ull
+  - imx6ulz
+  - imx7d
+  - imx7ulp
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  use-case: []
+- id: spsdk-github
+  title: SPSDK Source Code (GitHub)
+  doc_type: Other
+  url: https://github.com/nxp-mcuxpresso/spsdk
+  description: Secure Provisioning SDK (SPSDK) source code GitHub repository.
+  image: ''
+  soc:
+  - imx8ulp
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []
+- id: an12853
+  title: i.MX ROMs Log Events
+  description: Describes ROM log events details for i.MX 6/7/8/9 series ROM.
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN12853&location=null
+  image: ''
+  soc:
+  - all_soc
+  use-case: []
+- id: known-limitations-guidelines
+  title: Known Limitations and Guidelines for i.MX Security IPs
+  description: Known limitations in various security IPs within i.MX processors.
+  doc_type: Other
+  url: https://community.nxp.com/t5/Known-Limitations-and-Guidelines/tkb-p/imx-known-issues@tkb
+  image: ''
+  soc:
+  - all_soc
+  use-case: []
+- id: cst-latest
+  title: Latest Code Signing Tool (CST)
+  doc_type: Other
+  url: https://www.nxp.com/webapp/Download?colCode=IMX_CST_TOOL_NEW&location=null
+  description: NXP Code Signing Tool (CST) package with complete source code and documentation
+    for signing both HAB and AHAB boot images.
+  image: ''
+  soc:
+  - imx6sl
+  - imx6sll
+  - imx6s
+  - imx6dl
+  - imx6q
+  - imx6qp
+  - imx6sx
+  - imx6ul
+  - imx6ull
+  - imx6ulz
+  - imx7d
+  - imx7ulp
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  - imx8qm
+  - imx8qxp
+  - imx8dxl
+  - imx8ulp
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []
+- id: spsdk-docs
+  title: SPSDK Documentation (ReadTheDocs)
+  description: SPSDK documentation covering build/installation, API reference, user
+    guide and examples for supported MPU and MCU devices.
+  doc_type: User Guide
+  url: https://spsdk.readthedocs.io/en/latest/
+  image: ''
+  soc:
+  - imx8ulp
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []

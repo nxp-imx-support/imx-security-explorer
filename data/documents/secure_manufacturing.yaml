@@ -1,0 +1,41 @@
+feature: secure_manufacturing
+documents:
+- id: an13222
+  title: Manufacturing Protection Application Note
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN13222&location=null
+  description: "Guidance on secure manufacturing in supported i.MX devices. Describes how to provision sensitive material in an unsecured manufacturing environment."
+  image: ""
+  soc:
+  - imx7d
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  use-case: []
+- id: mp-verification-tool
+  title: Manufacturing Protection Verification Tool
+  doc_type: Other
+  url: https://github.com/nxp-imx-support/imx_sec_apps/tree/master/mp-verification-tool
+  description: "Reference verification tool to authorize products with Manufacturing Protection enabled."
+  image: ""
+  soc:
+  - imx7d
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  use-case: []
+- id: secure-manufacturing-training
+  title: Secure Manufacturing Training
+  doc_type: Other
+  url: https://www.nxp.com/design/training/secure-manufacturing:SECURE-THE-EDGE-SECURE-MANUFACTURING
+  description: "Training on how to provision sensitive material in an unsecured manufacturing environment using Manufacturing Protection."
+  image: ""
+  soc:
+  - imx7d
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  use-case: []

@@ -1,0 +1,47 @@
+feature: anti_rb
+documents:
+- id: anti_rb_spsdk
+  title: Anti-Rollback Protection Guide (SPSDK docs)
+  doc_type: User Guide
+  url: https://spsdk.readthedocs.io/en/latest/examples/ahab/imx95/imx95_anti_rollback_protection.html
+  description: Guide demonstrating how to use SPSDK tools to implement anti-rollback
+    protection on ELE based devices using AHAB container security features to prevent
+    firmware downgrade attacks.
+  image: ''
+  soc:
+  - imx8ulp
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []
+- id: srk_revoke_spsdk
+  title: i.MX943 SRK Revocation Example (SPSDK docs)
+  doc_type: User Guide
+  url: https://spsdk.readthedocs.io/en/latest/examples/ahab/imx943/imx943_srk_revocation.html
+  description: Guide demonstrating how to use SPSDK tools to revoke Super Root Keys
+    (SRK) on ELE based devices using Commit API to prevent compromised SRK signed
+    image to boot on device.
+  image: ''
+  soc:
+  - imx8ulp
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []
+- id: an14533
+  title: Anti-Rollback Protection via Fuse Version in Image Container[AN14533]
+  description: Application note describing how to implement anti-rollback protection
+    using fuse version fields in image containers of ELE based devices to prevent
+    downgrade attacks.
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN14533&isHTMLorPDF=HTML
+  image: ''
+  soc:
+  - imx8ulp
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []

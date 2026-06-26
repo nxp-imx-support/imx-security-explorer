@@ -1,0 +1,59 @@
+feature: edgelock_2go
+documents:
+- id: an14544
+  title: EdgeLock 2GO Services for MPU and MCU[AN14544]
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN14544&isHTMLorPDF=HTML
+  description: Describes EdgeLock 2GO cloud-based security provisioning services for
+    NXP MPUs and MCUs, including device onboarding, credential management, and secure
+    lifecycle management.
+  image: ''
+  soc:
+  - imx93
+  - imx943
+  - imx91
+  - imx95
+  use-case: []
+- id: AN14586
+  title: EdgeLock 2GO Provisioning via Cloud Flow for MPUs[AN14586]
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN14586&isHTMLorPDF=HTML
+  description: Explains the cloud-based provisioning flow for MPUs using EdgeLock
+    2GO, covering device registration, secure credential provisioning and device management
+    through cloud services.
+  image: ''
+  soc:
+  - imx93
+  - imx943
+  - imx91
+  - imx95
+  use-case: []
+- id: an14968
+  title: EdgeLock 2GO Provisioning via Proxy per Product Type Flow for MPUs[AN14968]
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN14968&isHTMLorPDF=HTML
+  description: Explains the proxy-based provisioning flow organized by product type
+    for MPUs, covering device registration, secure credential provisioning for a batch
+    of devices through a local proxy server for environments with restricted cloud
+    access.
+  image: ''
+  soc:
+  - imx93
+  - imx943
+  - imx91
+  - imx95
+  use-case: []
+- id: an14741
+  title: EdgeLock 2GO Provisioning via Proxy Flow for MPUs Rev. 1.0[AN14741]
+  description: Explains the proxy-based provisioning flow for MPUs using EdgeLock
+    2GO, covering device registration, secure credential provisioning and device management
+    through a local proxy server for environments with restricted cloud access.
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN14741&isHTMLorPDF=HTML
+  image: ''
+  soc:
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []

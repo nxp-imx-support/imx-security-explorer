@@ -1,0 +1,29 @@
+feature: tls
+documents:
+- id: ug10163_tls_smw
+  title: OpenSSL TLS offload to Edgelock Enclave (ELE) via Security MiddleWare (SMW)
+    PKCS#11 interface
+  doc_type: User Guide
+  url: https://docs.nxp.com/bundle/UG10163/page/topics/openSSL_tls_offload_security_middleware.html
+  description: Guide for configuring OpenSSL to offload TLS operations to the Edgelock
+    Enclave using the Security MiddleWare PKCS#11 interface on i.MX processors
+  image: ''
+  soc:
+  - imx93
+  - imx943
+  - imx91
+  - imx95
+  use-case: []
+- id: ug10163_tls_smw_optee
+  title: OpenSSL TLS offload to OP-TEE PKCS#11 via pkcs11-provider
+  description: Guide for running OpenSSL asymmetric cryptographic tests using PKCS#11
+    interface with OP-TEE on i.MX processors
+  doc_type: Reference Manual
+  url: https://docs.nxp.com/bundle/UG10163/page/topics/running_openssl_asymmetric_tests_with_PKCS.html
+  image: ''
+  soc:
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []

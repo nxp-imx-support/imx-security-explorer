@@ -1,0 +1,25 @@
+feature: tamper
+documents:
+- id: ug10163_bbsm_tamper
+  title: Tamper Detection on ELE devices
+  description: Describes the Battery-Backed Security Module (BBSM) tamper detection
+    features and configuration for EdgeLock Enclave (ELE) devices, including tamper
+    pin setup and security violation handling.
+  doc_type: User Guide
+  url: https://docs.nxp.com/bundle/UG10163/page/topics/bbsm_tamper_detect.html
+  soc:
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []
+- id: an12210
+  title: Tampering Application on i.MX 7D SabreSD Board
+  description: Describes the steps required for software configuration and physical
+    setup for both passive and active tampering on i.MX 7D.
+  doc_type: Application Note
+  url: https://www.nxp.com/docs/en/application-note/AN12210.pdf
+  image: ''
+  soc:
+  - imx7d
+  use-case: []

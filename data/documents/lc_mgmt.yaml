@@ -1,0 +1,31 @@
+feature: lc_mgmt
+documents:
+- id: an14615
+  title: Transitioning the Chip Lifecycle to Field Return OEM[AN14615]
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN14615&isHTMLorPDF=HTML
+  description: Application note describing how to transition i.MX devices from NXP-provisioned
+    lifecycle states to Field Return OEM lifecycle state, enabling secure return and
+    refurbishment workflows.
+  image: ''
+  soc:
+  - imx8ulp
+  - imx93
+  - imx943
+  - imx91
+  - imx95
+  use-case: []
+- id: an14954
+  title: Fuse Usage on i.MX Devices
+  description: Covers fuse usage and restrictions for both ELE-AP based i.MX devices
+    and non-ELE based devices.
+  doc_type: Application Note
+  url: https://docs.nxp.com/bundle/AN14954/page/topics/introduction.html
+  image: ''
+  soc:
+  - imx8ulp
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []

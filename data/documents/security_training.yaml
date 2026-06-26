@@ -1,0 +1,44 @@
+feature: security_training
+documents:
+- id: training-secure-boot-chain-of-trust
+  title: 'Training: Software Integrity and Data Confidentiality - Establishing Secure
+    Boot and Chain of Trust on i.MX Processors'
+  description: Explores the Secure by Design approach to software security for embedded
+    systems using i.MX processors, specifically establishing secure boot and chain
+    of trust.
+  doc_type: Training
+  url: https://www.nxp.com/design/training/software-integrity-and-data-confidentiality-establishing-secure-boot-and-chain-of-trust-on-i-mx-processors:TIP-SOFTWARE-INTEGRITY-AND-DATA-CONFIDENTIALITY
+  image: ''
+  soc:
+  - all_soc
+  use-case: []
+- id: training-securing-embedded-linux
+  title: 'Training: Securing Embedded Linux Devices - Pitfalls to Avoid'
+  description: Proven best practices for designing and maintaining secure products,
+    common security pitfalls, and tips for hardening embedded Linux devices.
+  doc_type: Training
+  url: https://www.nxp.com/design/training/securing-embedded-linux-devices-pitfalls-to-avoid:TIP-SECURING-EMBEDDED-LINUX-DEVICES-PITFALLS
+  image: ''
+  soc:
+  - all_soc
+  use-case: []
+- id: training-linux-kernel-security
+  title: 'Training: Linux Kernel Security - Overview of Security Features and Hardening'
+  description: Explores how Linux kernel configuration can be strengthened to protect
+    against security exploits.
+  doc_type: Training
+  url: https://www.nxp.com/design/training/linux-kernel-security-overview-of-security-features-and-hardening:TIP-LINUX-KERNEL-SECURITY-OVERVIEW-OF-SECURITY
+  image: ''
+  soc:
+  - all_soc
+  use-case: []
+- id: training-essential-security-edge
+  title: 'Training: Essential Security Considerations for Edge Applications'
+  description: Introduces key features of embedded security, from secure boot and
+    debug to lifecycle management.
+  doc_type: Training
+  url: https://www.nxp.com/design/training/essential-security-considerations-for-edge-applications:TIP-NXP-EDG-T0001
+  image: ''
+  soc:
+  - all_soc
+  use-case: []

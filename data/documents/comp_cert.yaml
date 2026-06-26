@@ -1,0 +1,95 @@
+feature: comp_cert
+documents:
+- id: psa-l1-nxp-products
+  title: NXP PSA Level 1 Certified Products
+  doc_type: Certification
+  url: https://products.psacertified.org/?standard=&level=level-one&partner=nxp-semiconductors&ean-13=&sort=default
+  description: List of NXP products with PSA Certified Level 1 certification.
+  image: ''
+  soc:
+  - imx8mp
+  - imx8qxp
+  - imx8qm
+  - imx8mn
+  - imx8mm
+  - imx7ulp
+  use-case: []
+- id: psa-l2-ele-imx8ulp
+  title: PSA Level 2 - EdgeLock Secure Enclave on i.MX 8ULP
+  doc_type: Certification
+  url: https://www.psacertified.org/products/s400-on-i-mx8ulp/
+  description: PSA Certified Level 2 certification for the EdgeLock Secure Enclave
+    on i.MX 8ULP.
+  image: ''
+  soc:
+  - imx8ulp
+  use-case: []
+- id: psa-l3-ele-imx93
+  title: PSA Level 3 - i.MX 93 EdgeLock Secure Enclave
+  doc_type: Certification
+  url: https://products.psacertified.org/products/imx93-edgelock-secure-enclave
+  description: PSA Certified Level 3 certification for the i.MX 93 EdgeLock Secure
+    Enclave.
+  image: ''
+  soc:
+  - imx93
+  use-case: []
+- id: sesip-l1-imx7ulp
+  title: SESIP Level 1 - i.MX 7ULP
+  doc_type: Certification
+  url: https://trustcb.com/download/SESIP-1900002-01-cert/?wpdmdl=1299
+  description: SESIP Level 1 security certification for i.MX 7ULP.
+  image: ''
+  soc:
+  - imx7ulp
+  use-case: []
+- id: sesip-l2-ele
+  title: SESIP Level 2 - EdgeLock Secure Enclave
+  doc_type: Certification
+  url: https://trustcb.com/download/?wpdmdl=3052
+  description: SESIP Level 2 security certification for the EdgeLock Secure Enclave.
+  image: ''
+  soc:
+  - imx8ulp
+  use-case: []
+- id: cavp-imx8ulp-aes
+  title: CAVP - i.MX 8ULP AES Validation
+  doc_type: Certification
+  url: https://csrc.nist.gov/projects/cryptographic-algorithm-validation-program/details?validation=36207
+  description: NIST Cryptographic Algorithm Validation Program (CAVP) AES certification
+    for i.MX 8ULP.
+  image: ''
+  soc:
+  - imx8ulp
+  use-case: []
+- id: cavp-imx8ulp-drbg
+  title: CAVP - i.MX 8ULP DRBG Validation
+  doc_type: Certification
+  url: https://csrc.nist.gov/projects/cryptographic-algorithm-validation-program/details?validation=36208
+  description: NIST Cryptographic Algorithm Validation Program (CAVP) DRBG certification
+    for i.MX 8ULP.
+  image: ''
+  soc:
+  - imx8ulp
+  use-case: []
+- id: an14601
+  title: Ease CRA Compliance with i.MX 93[AN14601]
+  doc_type: Compliance
+  url: https://www.nxp.com/webapp/Download?colCode=AN14601&isHTMLorPDF=HTML
+  description: Application note providing guidance on achieving Cyber Resilience Act
+    (CRA) compliance using the i.MX 93 processor, including security features and
+    implementation recommendations.
+  image: ''
+  soc:
+  - imx93
+  use-case: []
+- id: an14304
+  title: Ease ISA/IEC 62443-4-2 Compliance with i.MX 8XLite
+  doc_type: Compliance
+  url: https://www.nxp.com/webapp/Download?colCode=AN14304
+  description: Describes how i.MX 8DualXLite can be used to facilitate the implementation
+    of ISA/IEC 62443-4-2 requirements.
+  image: ''
+  soc:
+  - imx8dxl
+  use-case: []

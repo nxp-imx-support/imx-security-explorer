@@ -1,0 +1,32 @@
+feature: secure_debug
+documents:
+- id: spsdk-secure-debug
+  title: Debug authentication on i.mx9 (SPSDK docs)
+  doc_type: User Guide
+  url: https://spsdk.readthedocs.io/en/latest/examples/dat/imx9/imx9_debug_auth.html
+  description: SPSDK documentation guide for implementing debug authentication on
+    i.MX9 devices, covering DAT (Debug Authentication Tool) configuration, credential
+    generation, and secure debug enablement procedures.
+  image: ''
+  soc:
+  - imx8ulp
+  - imx93
+  - imx943
+  - imx91
+  - imx95
+  use-case: []
+- id: an14579
+  title: Secure Debug on ELE-AP based i.MX SoCs[AN14579]
+  description: Application Note describes the secure debug feature implementation
+    on i.MX SoCs with EdgeLock Secure Enclave (ELE-AP), including debug authentication
+    protocols, credential management, and procedures for enabling secure JTAG access.
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN13994
+  image: ''
+  soc:
+  - imx8ulp
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []

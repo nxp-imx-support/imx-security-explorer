@@ -1,0 +1,108 @@
+feature: encrypted_storage
+documents:
+- id: an12714
+  title: i.MX Encrypted Storage Using CAAM Secure Keys
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN12714&location=null
+  description: Steps to run storage encryption at the block level using DM-Crypt taking
+    advantage of the CAAM secure key feature.
+  image: ''
+  soc:
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  use-case: []
+- id: an14105
+  title: Understanding SECO Secure Storage and Non-Volatile Memory Management
+  doc_type: Application Note
+  url: https://www.nxp.com/docs/en/application-note/AN14105.pdf
+  description: Describes key concepts related to the Security Controller (SECO) secure
+    storage and non-volatile memory management.
+  image: ''
+  soc:
+  - imx8qm
+  - imx8qxp
+  - imx8dxl
+  use-case: []
+- id: an12554
+  title: Demo Application to Generate Red/Black Blobs Using CAAM and Encrypt/Decrypt
+    Data
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN12554&location=null
+  description: Instructions on how to set up and run a demo application to generate
+    both red and black key blobs and use them to encrypt and decrypt data.
+  image: ''
+  soc:
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  use-case: []
+- id: an12838
+  title: Strengthening Public Key Cryptography Using CAAM Secure Key
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN12838&location=null
+  description: Leveraging the i.MX CAAM module to ensure confidential data transfer
+    over insecure channels using ECDSA secure keys.
+  image: ''
+  soc:
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  use-case: []
+- id: ug10163_dm-crypt_no_caam
+  title: DM-Crypt using TEE on ELE devices[IMXLUG]
+  doc_type: User Guide
+  url: https://docs.nxp.com/bundle/UG10163/page/topics/dm-crypt_usage_on_imx_without_caam_hardware_ip.html
+  description: Guide for using DM-Crypt with TEE on i.MX devices with EdgeLock Enclave
+    (ELE) that do not have CAAM hardware IP
+  image: ''
+  soc:
+  - imx93
+  - imx943
+  - imx91
+  - imx95
+  use-case: []
+- id: ug10163_dm-crypt_caam_trustedkey
+  title: DM-Crypt with Trusted keys backed by CAAM[IMXLUG]
+  doc_type: User Guide
+  url: https://docs.nxp.com/bundle/UG10163/page/topics/dm-crypt_with_trusted_keys_backed_by_caam.html
+  description: Guide for using DM-Crypt with trusted keys backed by CAAM on i.MX devices
+    with CAAM hardware IP
+  image: ''
+  soc:
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  - imx8qm
+  - imx8qxp
+  - imx8dxl
+  use-case: []
+- id: ug10163_dm-crypt_caam_taggedkey
+  title: DM-Crypt with CAAM's tagged key[IMXLUG]
+  doc_type: User Guide
+  url: https://docs.nxp.com/bundle/UG10163/page/topics/dm-crypt_with_caams_tagged_key.html
+  description: Guide for using DM-Crypt with CAAM's tagged key on i.MX devices with
+    CAAM hardware IP
+  image: ''
+  soc:
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  - imx8qm
+  - imx8qxp
+  - imx8dxl
+  use-case: []
+- id: ug10163_dm-crypt_dcp
+  title: DM-Crypt using DCP's Crypto Key[IMXLUG]
+  description: Guide for using DM-Crypt with DCP's crypto keys on i.MX 6ULL
+  doc_type: User Guide
+  url: https://docs.nxp.com/bundle/UG10163/page/topics/dm-crypt_using_dcp_crypto_keys.html
+  image: ''
+  soc:
+  - imx6ull
+  use-case: []

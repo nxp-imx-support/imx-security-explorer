@@ -1,0 +1,82 @@
+site:
+  title: i.MX Security Explorer
+  version: 0.0.1
+families:
+- id: imx6
+  name: i.MX 6 Family
+- id: imx7
+  name: i.MX 7 Family
+- id: imx8
+  name: i.MX 8 Family
+- id: imx9
+  name: i.MX 9 Family
+features:
+- id: security_architecture
+  name: Security Documentation
+  description: Security architecture overview and documentation resources
+- id: secure_boot
+  name: Secure Boot
+  description: Validates boot image authenticity using cryptographic signatures
+- id: encrypted_boot
+  name: Encrypted Boot (AHAB/OTFAD/IPED)
+  description: Encrypted boot implementation and step-by-step guides
+- id: encrypted_storage
+  name: Encrypted Storage (dm-crypt / dm-verity)
+  description: Data-at-rest protection using keys bound to the device hardware for
+    dm-crypt (confidentiality) and dm-verity (integrity). Keys never leave the hardware
+    in plaintext form.
+- id: secure_debug
+  name: Secure Debug / JTAG Authentication
+  description: Assymmetric debug authentication using EdgeLock Secure Enclave
+- id: edgelock_2go
+  name: EdgeLock 2GO Provisioning
+  description: Cloud-based device provisioning and lifecycle management service
+- id: anti_rb
+  name: Anti-Rollback
+  description: AHAB-based secure boot for authenticated image loading
+- id: resource_partitioning
+  name: Resource partitioning and isolation
+  description: Resource partitioning and isolation
+- id: lc_mgmt
+  name: Lifecycle Management
+  description: Change/Update device lifecycle state
+- id: tamper
+  name: Tamper configuration and detection
+  description: SNVS/BBSM block active/passive tamper detection pins.
+    On tamper event, SNVS/BBSM can zeroize security-critical data.
+- id: tls
+  name: TLS offload
+  description: Offloading crypto operation required by TLS to hardware crypto subsystem
+- id: optee
+  name: OP-TEE Trusted Execution Environment
+  description: Open Portable Trusted Execution Environment enablement and configuration on i.MX processors
+- id: secure_updates
+  name: Secure OTA Updates
+  description: Secure Over-the-Air firmware and software update mechanisms using CAAM, Mender, or SWUpdate
+- id: secure_manufacturing
+  name: Secure Manufacturing
+  description: Provisioning sensitive material in untrusted manufacturing environments using Manufacturing Protection
+- id: imx_secure_elements
+  name: Secure Elements with i.MX
+  description: Interfacing NXP EdgeLock Secure Elements with i.MX processors for external hardware security
+- id: vulnerability_mgmt_training
+  name: Vulnerability Management Trainings
+  description: Software Bill of Materials (SBOM) and CVE lifecycle management for embedded Linux BSPs using Vigiles
+- id: android_security
+  name: Android Security
+  description: Security features and configuration for i.MX Android software including secure boot and TEE
+- id: security_training
+  name: Security Training
+  description: NXP security training workshops, webinars, and on-demand courses for i.MX processors
+- id: miscellaneous
+  name: Miscellaneous References
+  description: Collection of Miscellaneous references
+use-cases: []
+document_types:
+- Reference Manual
+- Application Note
+- User Guide
+- Certification
+- Compliance
+- Training
+- Other

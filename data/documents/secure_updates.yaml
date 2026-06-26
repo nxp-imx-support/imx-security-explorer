@@ -1,0 +1,56 @@
+feature: secure_updates
+documents:
+- id: an12900
+  title: Secure Over the Air Updates
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN12900&location=null
+  description: Secure Over-the-Air prototype for Linux using CAAM and Mender or SWUpdate.
+  image: ''
+  soc:
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  use-case: []
+- id: secure-ota-src
+  title: Secure OTA Updates - Source Code
+  doc_type: Other
+  url: https://github.com/nxp-imx-support/imx_sec_apps/tree/master/demo-ota-updates
+  description: Source code for the Secure OTA Updates demo using CAAM and Mender or
+    SWUpdate.
+  image: ''
+  soc:
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  use-case: []
+- id: secure-ota-design-webinar
+  title: 'Secure Software Updates: Designing OTA Updates for Secure Embedded Linux
+    Systems'
+  doc_type: Other
+  url: https://www.nxp.com/pages/secure-software-updates-designing-ota-updates-for-secure-embedded-linux-systems:TIP-SECURE-SOFTWARE-UPDATES-DESIGNING-OTA
+  description: Webinar covering field updates with OTA — incremental and full OS updates,
+    signing of packages and update images, server authentication and key considerations
+    for securely deploying updates.
+  image: ''
+  soc:
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  use-case: []
+- id: an13872
+  title: Enabling SWUpdate on i.MX 6ULL, i.MX 8M Mini, i.MX 93, and i.MX 95
+  description: SWUpdate is a Linux update agent providing an efficient and safe way
+    to update an embedded Linux system with support for local and OTA updates and
+    multiple update strategies.
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN13872&location=null
+  image: ''
+  soc:
+  - imx6ull
+  - imx8mm
+  - imx93
+  - imx95
+  use-case: []

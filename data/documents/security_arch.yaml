@@ -1,0 +1,232 @@
+feature: security_architecture
+documents:
+- id: imx6ull_srm
+  title: Security Reference Manual
+  doc_type: Reference Manual
+  url: https://www.nxp.com/webapp/sps/download/mod_download.jsp?colCode=IMX6ULLSRM&appType=moderated
+  description: Comprehensive security reference documentation for i.MX 6ULL/ULZ processor,
+    covering security features, implementations, and best practices.
+  image: ''
+  soc:
+  - imx6ull
+  use-case: []
+- id: imx6ul_srm
+  title: Security Reference Manual
+  doc_type: Reference Manual
+  url: https://www.nxp.com/webapp/sps/download/mod_download.jsp?colCode=IMX6UL-SRM&appType=moderated
+  description: Comprehensive security reference documentation for i.MX 6UltraLite
+    processor, covering security features, implementations, and best practices.
+  image: ''
+  soc:
+  - imx6ul
+  use-case: []
+- id: imx6sl_srm
+  title: Security Reference Manual
+  description: Comprehensive security reference documentation for i.MX 6SoloLite/SLL
+    processor, covering security features, implementations, and best practices.
+  doc_type: Reference Manual
+  url: https://www.nxp.com/webapp/Download?colCode=IMX6SLSRM&appType=moderatedWithoutFAE
+  image: ''
+  soc:
+  - imx6sl
+  use-case: []
+- id: imx6sx_srm
+  title: Security Reference Manual
+  doc_type: Reference Manual
+  url: https://www.nxp.com/webapp/sps/download/mod_download.jsp?colCode=IMX6SXSRM&appType=moderated
+  description: Comprehensive security reference documentation for i.MX 6SoloX processor,
+    covering security features, implementations, and best practices.
+  image: ''
+  soc:
+  - imx6sx
+  use-case: []
+- id: imx6dq_srm
+  title: Security Reference Manual
+  doc_type: Reference Manual
+  url: https://www.nxp.com/webapp/sps/download/mod_download.jsp?colCode=IMX6DQ6SDLSRM&appType=moderatedWithoutFAE
+  description: Comprehensive security reference documentation for i.MX 6DQ/6DLS/DQPlus
+    processor, covering security features, implementations, and best practices.
+  image: ''
+  soc:
+  - imx6dq
+  use-case: []
+- id: imx7ulp_srm
+  title: Security Reference Manual
+  doc_type: Reference Manual
+  url: https://www.nxp.com/webapp/Download?colCode=IMX7ULPSRM&appType=moderatedWithoutFAE
+  description: Comprehensive security reference documentation for i.MX 7ULP processor,
+    covering security features, implementations, and best practices.
+  image: ''
+  soc:
+  - imx7ulp
+  use-case: []
+- id: imx7d_srm
+  title: Security Reference Manual
+  doc_type: Reference Manual
+  url: https://www.nxp.com/webapp/sps/download/mod_download.jsp?colCode=IMX7DSSRM&appType=moderated
+  description: Comprehensive security reference documentation for i.MX 7Dual/Solo
+    processor, covering security features, implementations, and best practices.
+  image: ''
+  soc:
+  - imx7d
+  use-case: []
+- id: imx8mq_srm
+  title: Security Reference Manual
+  doc_type: Reference Manual
+  url: https://www.nxp.com/webapp/Download?colCode=IMX8MDQLQSRM&appType=moderatedWithoutFAE
+  description: Comprehensive security reference documentation for i.MX 8M Quad/QuadLite/Dual
+    processor, covering security features, implementations, and best practices.
+  image: ''
+  soc:
+  - imx8mq
+  use-case: []
+- id: imx8mm_srm
+  title: Security Reference Manual
+  doc_type: Reference Manual
+  url: https://www.nxp.com/webapp/Download?colCode=IMX8MMSRM&appType=moderatedWithoutFAE
+  description: Comprehensive security reference documentation for i.MX 8M Mini processor,
+    covering security features, implementations, and best practices.
+  image: ''
+  soc:
+  - imx8mm
+  use-case: []
+- id: imx8mn_srm
+  title: Security Reference Manual
+  doc_type: Reference Manual
+  url: https://www.nxp.com/webapp/Download?colCode=IMX8MNSRM&appType=moderatedWithoutFAE
+  description: Comprehensive security reference documentation for i.MX 8M Nano processor,
+    covering security features, implementations, and best practices.
+  image: ''
+  soc:
+  - imx8mn
+  use-case: []
+- id: imx8mp_srm
+  title: Security Reference Manual
+  doc_type: Reference Manual
+  url: https://www.nxp.com/webapp/sps/download/mod_download.jsp?colCode=IMX8MPSRM&appType=moderated
+  description: Comprehensive security reference documentation for i.MX 8M Plus processor,
+    covering security features, implementations, and best practices.
+  image: ''
+  soc:
+  - imx8mp
+  use-case: []
+- id: imx8qm_srm
+  title: Security Reference Manual
+  doc_type: Reference Manual
+  url: https://www.nxp.com/webapp/sps/download/mod_download.jsp?colCode=IMX8QMSRM&appType=moderated
+  description: Comprehensive security reference documentation for i.MX 8QuadMax/QuadPlus
+    processor, covering security features, implementations, and best practices.
+  image: ''
+  soc:
+  - imx8qm
+  use-case: []
+- id: imx8qxp_srm
+  title: Security Reference Manual
+  doc_type: Reference Manual
+  url: https://www.nxp.com/webapp/sps/download/mod_download.jsp?colCode=IMX8QXPSRM&appType=moderatedWithoutFAE
+  description: Comprehensive security reference documentation for i.MX 8QuadXPlus/DualXPlus
+    processor, covering security features, implementations, and best practices.
+  image: ''
+  soc:
+  - imx8qxp
+  use-case: []
+- id: imx8dxl_srm
+  title: Security Reference Manual
+  doc_type: Reference Manual
+  url: https://www.nxp.com/webapp/sps/download/mod_download.jsp?colCode=IMX8DXLSRM&appType=moderated
+  description: Comprehensive security reference documentation for i.MX 8DualXL/XLite
+    processor, covering security features, implementations, and best practices.
+  image: ''
+  soc:
+  - imx8dxl
+  use-case: []
+- id: imx8ulp_srm
+  title: Security Reference Manual
+  doc_type: Reference Manual
+  url: https://www.nxp.com/products/i.MX8ULP#myDocument
+  description: Comprehensive security reference documentation for i.MX 8ULP processor,
+    covering security features, implementations, and best practices.
+  image: ''
+  soc:
+  - imx8ulp
+  use-case: []
+- id: imx91_srm
+  title: Security Reference Manual
+  doc_type: Reference Manual
+  url: https://www.nxp.com/products/i.MX91#myDocument
+  description: Comprehensive security reference documentation for i.MX91 processor,
+    covering security features, implementations, and best practices.
+  image: ''
+  soc:
+  - imx91
+  use-case: []
+- id: imx91_ele_ug
+  title: EdgeLock Enclave User Guide
+  doc_type: User Guide
+  url: https://www.nxp.com/products/i.MX91#myDocument
+  description: User guide for EdgeLock Enclave on i.MX91, providing instructions for
+    ELE integration and usage.
+  image: ''
+  soc:
+  - imx91
+  use-case: []
+- id: imx93_ele_ug
+  title: EdgeLock Enclave User Guide
+  doc_type: User Guide
+  url: https://www.nxp.com/products/i.MX93#myDocument
+  description: User guide for EdgeLock Enclave on i.MX93, providing instructions for
+    ELE integration and usage.
+  image: ''
+  soc:
+  - imx93
+  use-case: []
+- id: imx943_srm
+  title: Security Reference Manual
+  doc_type: Reference Manual
+  url: https://www.nxp.com/products/i.MX943#myDocument
+  description: Comprehensive security reference documentation for i.MX943 processor,
+    covering security features, implementations, and best practices.
+  image: ''
+  soc:
+  - imx943
+  use-case: []
+- id: imx943_ele_ug
+  title: EdgeLock Enclave User Guide
+  doc_type: User Guide
+  url: https://www.nxp.com/products/i.MX943#myDocument
+  description: User guide for EdgeLock Enclave on i.MX943, providing instructions
+    for ELE integration and usage.
+  image: ''
+  soc:
+  - imx943
+  use-case: []
+- id: imx95_srm
+  title: Security Reference Manual
+  doc_type: Reference Manual
+  url: https://www.nxp.com/products/i.MX95#myDocument
+  description: Comprehensive security reference documentation for i.MX95 processor,
+    covering security features, implementations, and best practices.
+  image: ''
+  soc:
+  - imx95
+  use-case: []
+- id: imx95_ele_ug
+  title: EdgeLock Enclave User Guide
+  doc_type: User Guide
+  url: https://www.nxp.com/products/i.MX95#myDocument
+  description: User guide for EdgeLock Enclave on i.MX95, providing instructions for
+    ELE integration and usage.
+  image: ''
+  soc:
+  - imx95
+  use-case: []
+- id: imx93_srm
+  title: Security Reference Manual
+  description: Comprehensive security reference documentation for i.MX93 processor,
+    covering security features, implementations, and best practices.
+  doc_type: Reference Manual
+  url: https://www.nxp.com/products/i.MX93#myDocument
+  image: ''
+  soc:
+  - imx93
+  use-case: []

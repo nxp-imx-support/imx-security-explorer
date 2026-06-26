@@ -1,0 +1,21 @@
+feature: android_security
+documents:
+- id: ug10158
+  title: i.MX Android Security User's Guide
+  description: Guide for customization of security features supported by i.MX Android
+    software. Provides an overview of i.MX Android security features and how to configure
+    and use them.
+  doc_type: User Guide
+  url: https://docs.nxp.com/bundle/UG10158/page/topics/preface.html
+  image: ''
+  soc:
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  - imx8qm
+  - imx8qxp
+  - imx8dxl
+  - imx8ulp
+  - imx95
+  use-case: []

@@ -1,0 +1,16 @@
+feature: resource_partitioning
+documents:
+- id: an14721
+  title: How to Understand and Use TRDC in i.MX Devices[AN14721]
+  description: Application note explaining the Trusted Resource Domain Controller
+    (TRDC) architecture and implementation in i.MX devices, including configuration
+    examples and use cases for resource partitioning and security domain isolation.
+  doc_type: Application Note
+  url: https://docs.nxp.com/bundle/AN14721/page/topics/introduction.html
+  image: ''
+  soc:
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []

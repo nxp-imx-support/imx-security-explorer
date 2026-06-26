@@ -1,0 +1,105 @@
+socs:
+- id: imx6sl
+  name: i.MX 6SoloLite
+  family: imx6
+  description: Single Cortex-A9 with CAAM, DCP, CSU, SNVS, TZASC, and HAB support
+- id: imx6sll
+  name: i.MX 6SLL
+  family: imx6
+  description: Single Cortex-A9 with DCP, CSU, SNVS, TZASC, and HAB support
+- id: imx6s
+  name: i.MX 6Solo
+  family: imx6
+  description: Single Cortex-A9 with CAAM, CSU, SNVS, TZASC, and HAB support
+- id: imx6dl
+  name: i.MX 6DualLite
+  family: imx6
+  description: Dual Cortex-A9 with CAAM, CSU, SNVS, TZASC, and HAB support
+- id: imx6q
+  name: i.MX 6Quad
+  family: imx6
+  description: Quad Cortex-A9 with CAAM, CSU, SNVS, TZASC, and HAB support
+- id: imx6qp
+  name: i.MX 6QuadPlus
+  family: imx6
+  description: Quad Cortex-A9 with CAAM, CSU, SNVS, TZASC, and HAB support
+- id: imx6sx
+  name: i.MX 6SoloX
+  family: imx6
+  description: Single Cortex-A9 with Cortex-M4, CAAM, CSU, SNVS, TZASC, and HAB support
+- id: imx6ul
+  name: i.MX 6UltraLite
+  family: imx6
+  description: Single Cortex-A7 with CAAM, CSU, SNVS, TZASC, and HAB support
+- id: imx6ull
+  name: i.MX 6ULL
+  family: imx6
+  description: Single Cortex-A7 with DCP, CSU, SNVS, TZASC, and HAB support
+- id: imx6ulz
+  name: i.MX 6ULZ
+  family: imx6
+  description: Single Cortex-A7 with DCP, CSU, SNVS, TZASC, and HAB support
+- id: imx7d
+  name: i.MX 7Dual
+  family: imx7
+  description: Dual Cortex-A7 with Cortex-M4, CAAM, CSU, SNVS, RDC, and HAB support
+- id: imx7ulp
+  name: i.MX 7ULP
+  family: imx7
+  description: Single Cortex-A7 with Cortex-M4, CAAM, LTC, SNVS, XRDC, OTFAD, and
+    HAB support
+- id: imx8mm
+  name: i.MX 8M Mini
+  family: imx8
+  description: Quad Cortex-A53 with Cortex-M4, CAAM, SNVS, TZASC, RDC, and HAB support
+- id: imx8mn
+  name: i.MX 8M Nano
+  family: imx8
+  description: Quad Cortex-A53 with CAAM, SNVS, TZASC, RDC, and HAB support
+- id: imx8mp
+  name: i.MX 8M Plus
+  family: imx8
+  description: Quad Cortex-A53 with Cortex-M7, NPU, CAAM, SNVS, TZASC, RDC, and HAB
+    support
+- id: imx8mq
+  name: i.MX 8M Quad
+  family: imx8
+  description: Quad Cortex-A53 with Cortex-M4, CAAM, SNVS, TZASC, RDC, and HAB support
+- id: imx8qm
+  name: i.MX 8QuadMax
+  family: imx8
+  description: Dual Cortex-A72 and Quad Cortex-A53 with dual Cortex-M4, SECO, CAAM,
+    SNVS, TRDC, and AHAB support
+- id: imx8qxp
+  name: i.MX 8QuadXPlus
+  family: imx8
+  description: Quad Cortex-A35 with Cortex-M4, SECO, CAAM, SNVS, TRDC, and AHAB support
+- id: imx8dxl
+  name: i.MX 8DualXLite
+  family: imx8
+  description: Dual Cortex-A35 with Cortex-M4, SECO, CAAM, SNVS, TRDC, and AHAB support
+- id: imx8ulp
+  name: i.MX 8ULP
+  family: imx8
+  description: Dual Cortex-A35 with Cortex-M33, ELE, CAAM, SNVS, BBSM, XRDC, TRDC,
+    OTFAD, and AHAB support
+- id: imx91
+  name: i.MX 91
+  family: imx9
+  description: Single Cortex-A55 with Cortex-M33, ELE, SNVS, BBSM, TRDC, IEE, OTFAD,
+    and AHAB support
+- id: imx93
+  name: i.MX 93
+  family: imx9
+  description: Dual Cortex-A55 with Cortex-M33, ELE, SNVS, BBSM, TRDC, IEE, OTFAD,
+    and AHAB support
+- id: imx943
+  name: i.MX 943
+  family: imx9
+  description: Heterogeneous processor with ELE, SNVS, BBSM, TRDC, IEE, IPED, CRRM,
+    and AHAB support
+- id: imx95
+  name: i.MX 95
+  family: imx9
+  description: Heterogeneous processor with ELE, V2X HSM, SNVS, BBSM, TRDC, IEE, OTFAD,
+    and AHAB support

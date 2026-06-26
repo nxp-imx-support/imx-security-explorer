@@ -1,0 +1,184 @@
+feature: secure_boot
+documents:
+- id: an12312
+  title: Secure Boot on AHAB Supported Devices[AN12312]
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN12312
+  description: Provides detailed information on implementing secure boot using Advanced
+    High Assurance Boot (AHAB) on i.MX 8 and i.MX 9 series processors, including container
+    signing and authentication.
+  image: ''
+  soc:
+  - imx93
+  - imx943
+  - imx91
+  - imx95
+  use-case: []
+- id: an14785
+  title: Offline and Online HSM using SPSDK[AN14785]
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN14785&isHTMLorPDF=HTML
+  description: Explains how to use Hardware Security Modules (HSM) with SPSDK for
+    secure key management in both offline and online modes for signing boot images.
+  image: ''
+  soc:
+  - imx93
+  - imx943
+  - imx91
+  - imx95
+  use-case: []
+- id: uboot-docs-ahab-guide
+  title: Step-by-step guide for AHAB enabled devices (UBOOT docs)
+  doc_type: User Guide
+  url: https://github.com/nxp-imx/uboot-imx/tree/lf_v2025.04/doc/imx/ahab/guides
+  description: Step-by-step guides from U-Boot documentation for implementing AHAB
+    secure boot, including image signing, container creation, and secure boot enablement
+    procedures.
+  image: ''
+  soc:
+  - imx8ulp
+  - imx93
+  - imx943
+  - imx91
+  - imx95
+  use-case: []
+- id: uboot-docs-hab-guide
+  title: Step-by-step guide for HAB and AHAB enabled devices (UBOOT docs)
+  doc_type: User Guide
+  url: https://github.com/nxp-imx/uboot-imx/tree/lf_v2025.04/doc/imx/habv4/guides
+  description: Step-by-step guides from U-Boot documentation for implementing HAB
+    secure boot.
+  image: ''
+  soc:
+  - imx6sl
+  - imx6sll
+  - imx6s
+  - imx6dl
+  - imx6q
+  - imx6qp
+  - imx6sx
+  - imx6ul
+  - imx6ull
+  - imx6ulz
+  - imx7d
+  - imx7ulp
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  use-case: []
+- id: imx95_spsdk_secure_boot
+  title: Secure boot (SPSDK docs)
+  doc_type: User Guide
+  url: https://spsdk.readthedocs.io/en/latest/examples/ahab/imx95/imx95_signed_ahab_uboot.html
+  description: SPSDK documentation example demonstrating how to sign and create AHAB
+    containers for U-Boot on i.MX95, including configuration and command-line usage.
+  image: ''
+  soc:
+  - imx95
+  use-case: []
+- id: spsdk-imx8ulp-ahab-uboot
+  title: SPSDK Example - i.MX 8ULP AHAB with U-Boot
+  doc_type: User Guide
+  url: https://spsdk.readthedocs.io/en/latest/examples/ahab/imx8ulp/imx8ulp_ahab_uboot.html
+  description: Device-specific SPSDK example for i.MX 8ULP AHAB signed image with
+    U-Boot.
+  image: ''
+  soc:
+  - imx8ulp
+  use-case: []
+- id: an12812
+  title: Using Code Signing Tool with Hardware Security Module
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN12812&location=null
+  description: Hardware Security Module backend exposed to extend the usage of CST
+    with an external HSM.
+  image: ''
+  soc:
+  - imx6sl
+  - imx6sll
+  - imx6s
+  - imx6dl
+  - imx6q
+  - imx6qp
+  - imx6sx
+  - imx6ul
+  - imx6ull
+  - imx6ulz
+  - imx7d
+  - imx7ulp
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  - imx8qm
+  use-case: []
+- id: cst-hsm-hab
+  title: Using HSM Mode for Code Signing in HAB Devices
+  doc_type: Other
+  url: https://community.nxp.com/t5/Security-Blog-NXP-Internal/Using-HSM-mode-for-code-signing-in-HAB-devices/ta-p/1585744
+  description: Offline HSM code signing support for HABv4-based devices.
+  image: ''
+  soc:
+  - imx6sl
+  - imx6sll
+  - imx6s
+  - imx6dl
+  - imx6q
+  - imx6qp
+  - imx6sx
+  - imx6ul
+  - imx6ull
+  - imx6ulz
+  - imx7d
+  - imx7ulp
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  use-case: []
+- id: an4581
+  title: Secure Boot Application Note
+  description: Describes secure boot implementation using High Assurance Boot (HAB)
+    for i.MX processors, including key generation, image signing, and fuse programming
+    procedures.
+  doc_type: Application Note
+  url: https://www.nxp.com/webapp/Download?colCode=AN4581&location=null
+  image: ''
+  soc:
+  - imx6sl
+  - imx6sll
+  - imx6s
+  - imx6dl
+  - imx6q
+  - imx6qp
+  - imx6sx
+  - imx6ul
+  - imx6ull
+  - imx6ulz
+  - imx7d
+  - imx7ulp
+  - imx8mm
+  - imx8mn
+  - imx8mp
+  - imx8mq
+  use-case: []
+- id: secure-boot-srd
+  title: Secure Boot Automation - Yocto Security Reference Design
+  description: Yocto-based Secure Boot automation via the NXP Security Reference Design.
+    Additional documentation available in the repository's Documentation folder.
+  doc_type: User Guide
+  url: https://github.com/nxp-imx-support/meta-nxp-security-reference-design/tree/walnascar-6.12.49-2.2.0/meta-secure-boot
+  image: ''
+  soc:
+  - all_soc
+  use-case: []
+- id: spsdk-imx95-ahab-uboot
+  title: i.MX 95 AHAB with U-Boot (SPSDK docs)
+  description: Device-specific SPSDK example for i.MX 95 AHAB signed image with U-Boot.
+  doc_type: User Guide
+  url: https://spsdk.readthedocs.io/en/latest/examples/ahab/imx95/imx95_ahab_uboot.html
+  image: ''
+  soc:
+  - imx95
+  use-case: []
