@@ -23,28 +23,6 @@ documents:
   soc:
   - imx6ul
   use-case: []
-- id: an12662
-  title: Binding a Host Device to EdgeLock SE05x
-  doc_type: Application Note
-  url: https://www.nxp.com/docs/en/application-note/AN12662.pdf
-  description: Binding MCUs with TrustZone and CAAM to the SE050x Secure Element for
-    strong device identity and external key storage.
-  image: ''
-  soc:
-  - imx6sl
-  - imx6s
-  - imx6dl
-  - imx6q
-  - imx6qp
-  - imx6sx
-  - imx6ul
-  - imx7d
-  - imx7ulp
-  - imx8mm
-  - imx8mn
-  - imx8mp
-  - imx8mq
-  use-case: []
 - id: an12119
   title: Quick Start Guide for A71CH and i.MX 6UltraLite
   description: Quick start guide for interfacing the A71CH Secure Element with i.MX

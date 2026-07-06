@@ -1,12 +1,12 @@
 feature: anti_rb
 documents:
 - id: anti_rb_spsdk
-  title: Anti-Rollback Protection Guide (SPSDK docs)
-  doc_type: User Guide
-  url: https://spsdk.readthedocs.io/en/latest/examples/ahab/imx95/imx95_anti_rollback_protection.html
+  title: Anti-Rollback Protection Guide
   description: Guide demonstrating how to use SPSDK tools to implement anti-rollback
     protection on ELE based devices using AHAB container security features to prevent
     firmware downgrade attacks.
+  doc_type: SPSDK Docs
+  url: https://spsdk.readthedocs.io/en/latest/examples/ahab/imx95/imx95_anti_rollback_protection.html
   image: ''
   soc:
   - imx8ulp
@@ -16,12 +16,12 @@ documents:
   - imx95
   use-case: []
 - id: srk_revoke_spsdk
-  title: i.MX943 SRK Revocation Example (SPSDK docs)
-  doc_type: User Guide
-  url: https://spsdk.readthedocs.io/en/latest/examples/ahab/imx943/imx943_srk_revocation.html
+  title: i.MX943 SRK Revocation Example
   description: Guide demonstrating how to use SPSDK tools to revoke Super Root Keys
     (SRK) on ELE based devices using Commit API to prevent compromised SRK signed
     image to boot on device.
+  doc_type: SPSDK Docs
+  url: https://spsdk.readthedocs.io/en/latest/examples/ahab/imx943/imx943_srk_revocation.html
   image: ''
   soc:
   - imx8ulp

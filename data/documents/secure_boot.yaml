@@ -68,11 +68,11 @@ documents:
   - imx8mq
   use-case: []
 - id: imx95_spsdk_secure_boot
-  title: Secure boot (SPSDK docs)
-  doc_type: User Guide
-  url: https://spsdk.readthedocs.io/en/latest/examples/ahab/imx95/imx95_signed_ahab_uboot.html
+  title: Secure boot
   description: SPSDK documentation example demonstrating how to sign and create AHAB
     containers for U-Boot on i.MX95, including configuration and command-line usage.
+  doc_type: SPSDK Docs
+  url: https://spsdk.readthedocs.io/en/latest/examples/ahab/imx95/imx95_signed_ahab_uboot.html
   image: ''
   soc:
   - imx95
@@ -87,12 +87,12 @@ documents:
   soc:
   - imx8ulp
   use-case: []
-- id: an12812
+- id: cst_hsm
   title: Using Code Signing Tool with Hardware Security Module
-  doc_type: Application Note
-  url: https://www.nxp.com/webapp/Download?colCode=AN12812&location=null
   description: Hardware Security Module backend exposed to extend the usage of CST
     with an external HSM.
+  doc_type: User Guide
+  url: https://www.nxp.com/webapp/Download?colCode=IMX_CST_TOOL_NEW&location=null
   image: ''
   soc:
   - imx6sl
@@ -115,9 +115,9 @@ documents:
   use-case: []
 - id: cst-hsm-hab
   title: Using HSM Mode for Code Signing in HAB Devices
-  doc_type: Other
-  url: https://community.nxp.com/t5/Security-Blog-NXP-Internal/Using-HSM-mode-for-code-signing-in-HAB-devices/ta-p/1585744
   description: Offline HSM code signing support for HABv4-based devices.
+  doc_type: NXP Community
+  url: https://community.nxp.com/t5/Security-Blog-NXP-Internal/Using-HSM-mode-for-code-signing-in-HAB-devices/ta-p/1585744
   image: ''
   soc:
   - imx6sl
@@ -174,9 +174,9 @@ documents:
   - all_soc
   use-case: []
 - id: spsdk-imx95-ahab-uboot
-  title: i.MX 95 AHAB with U-Boot (SPSDK docs)
+  title: i.MX 95 AHAB with U-Boot
   description: Device-specific SPSDK example for i.MX 95 AHAB signed image with U-Boot.
-  doc_type: User Guide
+  doc_type: SPSDK Docs
   url: https://spsdk.readthedocs.io/en/latest/examples/ahab/imx95/imx95_ahab_uboot.html
   image: ''
   soc:

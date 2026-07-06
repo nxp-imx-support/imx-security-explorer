@@ -4,21 +4,24 @@ documents:
   title: i.MX Encrypted Boot on AHAB-Enabled Devices[AN13994]
   doc_type: Application Note
   url: https://www.nxp.com/webapp/Download?colCode=AN13994
-  description: "This application note describes how to implement encrypted boot on i.MX devices with AHAB (Advanced High Assurance Boot) security architecture, providing secure boot with encrypted firmware images."
-  image: ""
+  description: This application note describes how to implement encrypted boot on
+    i.MX devices with AHAB (Advanced High Assurance Boot) security architecture, providing
+    secure boot with encrypted firmware images.
+  image: ''
   soc:
-    - imx8ulp
-    - imx93
-    - imx943
-    - imx91
-    - imx95
+  - imx8ulp
+  - imx93
+  - imx943
+  - imx91
+  - imx95
   use-case: []
 - id: an12056
   title: Encrypted Boot for HABv4 and CAAM Enabled Devices
   doc_type: Application Note
   url: https://www.nxp.com/webapp/Download?colCode=AN12056&location=null
-  description: "Applies to i.MX 6/7/8M Family of Application Processors. Describes encrypted boot implementation using HABv4 and the CAAM hardware security block."
-  image: ""
+  description: Applies to i.MX 6/7/8M Family of Application Processors. Describes
+    encrypted boot implementation using HABv4 and the CAAM hardware security block.
+  image: ''
   soc:
   - imx6sl
   - imx6sll
@@ -41,8 +44,9 @@ documents:
   title: Encrypted Boot Step-by-Step Guides for HAB Enabled Devices (UBOOT docs)
   doc_type: User Guide
   url: https://github.com/nxp-imx/uboot-imx/tree/lf_v2025.04/doc/imx/habv4/guides
-  description: "Step-by-step guides for encrypted boot on HABv4 enabled devices. Switch to the latest BSP or required version for updated guides."
-  image: ""
+  description: Step-by-step guides for encrypted boot on HABv4 enabled devices. Switch
+    to the latest BSP or required version for updated guides.
+  image: ''
   soc:
   - imx6sl
   - imx6sll
@@ -65,8 +69,9 @@ documents:
   title: Encrypted Boot Step-by-Step Guides for AHAB Enabled Devices (UBOOT docs)
   doc_type: User Guide
   url: https://github.com/nxp-imx/uboot-imx/tree/lf_v2025.04/doc/imx/ahab/guides
-  description: "Step-by-step guides for encrypted boot on AHAB enabled devices. Switch to the latest BSP or required version for updated guides."
-  image: ""
+  description: Step-by-step guides for encrypted boot on AHAB enabled devices. Switch
+    to the latest BSP or required version for updated guides.
+  image: ''
   soc:
   - imx8qm
   - imx8qxp
@@ -78,11 +83,12 @@ documents:
   - imx95
   use-case: []
 - id: spsdk-docs-ahab-enc-guide
-  title: i.MX 95 Encrypted Boot (SPSDK docs)
-  doc_type: User Guide
+  title: i.MX 95 Encrypted Boot
+  description: Step-by-step guides for encrypted boot on AHAB enabled devices using
+    SPSDK.
+  doc_type: SPSDK Docs
   url: https://spsdk.readthedocs.io/en/latest/examples/ahab/imx95/imx95_encrypted_signed_ahab_uboot.html#
-  description: "Step-by-step guides for encrypted boot on AHAB enabled devices using SPSDK."
-  image: ""
+  image: ''
   soc:
   - imx8ulp
   - imx91
@@ -94,8 +100,9 @@ documents:
   title: OTFAD - On The Fly AES Decryption on i.MX 7ULP
   doc_type: Application Note
   url: https://www.nxp.com/docs/en/application-note/AN12601.pdf
-  description: "Describes On-The-Fly AES Decryption (OTFAD) support in the i.MX 7ULP Application Processor."
-  image: ""
+  description: Describes On-The-Fly AES Decryption (OTFAD) support in the i.MX 7ULP
+    Application Processor.
+  image: ''
   soc:
   - imx7ulp
   use-case: []
@@ -103,17 +110,17 @@ documents:
   title: OTFAD Tool for i.MX 7ULP
   doc_type: Other
   url: https://github.com/nxp-imx-support/otfad_tool
-  description: "Tool for configuring On-The-Fly AES Decryption (OTFAD) on i.MX 7ULP."
-  image: ""
+  description: Tool for configuring On-The-Fly AES Decryption (OTFAD) on i.MX 7ULP.
+  image: ''
   soc:
   - imx7ulp
   use-case: []
 - id: spsdk-imx93-ahab-signed-enc
-  title: i.MX 93 Signed and Encrypted AHAB Image (SPSDK docs)
-  doc_type: User Guide
-  url: https://spsdk.readthedocs.io/en/latest/examples/ahab/imx93/imx93_signed_ahab_uboot.html
+  title: i.MX 93 Signed and Encrypted AHAB Image
   description: Device-specific SPSDK example for i.MX 93 signed and encrypted AHAB
     image, covering secure boot, encrypted boot, and key management.
+  doc_type: SPSDK Docs
+  url: https://spsdk.readthedocs.io/en/latest/examples/ahab/imx93/imx93_signed_ahab_uboot.html
   image: ''
   soc:
   - imx93

@@ -1,18 +1,18 @@
 feature: secure_debug
 documents:
 - id: spsdk-secure-debug
-  title: Debug authentication on i.mx9 (SPSDK docs)
-  doc_type: User Guide
-  url: https://spsdk.readthedocs.io/en/latest/examples/dat/imx9/imx9_debug_auth.html
+  title: Debug authentication on i.mx9
   description: SPSDK documentation guide for implementing debug authentication on
     i.MX9 devices, covering DAT (Debug Authentication Tool) configuration, credential
     generation, and secure debug enablement procedures.
+  doc_type: SPSDK Docs
+  url: https://spsdk.readthedocs.io/en/latest/examples/dat/imx9/imx9_debug_auth.html
   image: ''
   soc:
   - imx8ulp
+  - imx91
   - imx93
   - imx943
-  - imx91
   - imx95
   use-case: []
 - id: an14579
