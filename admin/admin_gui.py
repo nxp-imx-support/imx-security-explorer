@@ -1,3 +1,6 @@
+# Copyright 2026 NXP
+# SPDX-License-Identifier: BSD-3-Clause
+
 """
 admin_gui.py — Entry point for the i.MX Security Explorer Admin GUI.
 

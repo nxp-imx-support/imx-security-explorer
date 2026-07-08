@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+
+# Copyright 2026 NXP
+# SPDX-License-Identifier: BSD-3-Clause
+
 # run_admin.sh — Launcher for the i.MX Security Explorer Admin GUI.
 #
 # What this script does (in order)

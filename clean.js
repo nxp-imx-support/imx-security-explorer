@@ -1,3 +1,8 @@
+/*
+ * Copyright 2026 NXP
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
 /**
  * clean.js — Build artefact cleanup script for the i.MX Security Explorer.
  *

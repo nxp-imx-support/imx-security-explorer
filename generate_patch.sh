@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Copyright 2026 NXP
+# SPDX-License-Identifier: BSD-3-Clause
+
 # generate_patch.sh — Generate patch file for Admin tool changes
 # Usage: ./generate_patch.sh
 

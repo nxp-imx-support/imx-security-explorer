@@ -1,3 +1,6 @@
+# Copyright 2026 NXP
+# SPDX-License-Identifier: BSD-3-Clause
+
 """
 doc_tab.py — "Documents" tab for the i.MX Security Explorer Admin GUI.
 

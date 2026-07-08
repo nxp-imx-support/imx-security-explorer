@@ -1,3 +1,6 @@
+# Copyright 2026 NXP
+# SPDX-License-Identifier: BSD-3-Clause
+
 """
 feature_usecase_tab.py — "Features & Use-Cases" tab for the Admin GUI.
 
