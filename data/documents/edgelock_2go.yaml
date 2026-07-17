@@ -9,6 +9,7 @@ documents:
     lifecycle management.
   image: ''
   soc:
+  - imx8ulp
   - imx93
   - imx943
   - imx91
@@ -23,6 +24,7 @@ documents:
     through cloud services.
   image: ''
   soc:
+  - imx8ulp
   - imx93
   - imx943
   - imx91
@@ -52,6 +54,66 @@ documents:
   url: https://www.nxp.com/webapp/Download?colCode=AN14741&isHTMLorPDF=HTML
   image: ''
   soc:
+  - imx8ulp
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []
+- id: el2go_proxy_demo_ppt
+  title: '[PPT] EdgeLock 2GO Service for Protecting IIOT Devices with Proxy flow demo'
+  description: Update on EdgeLock 2GO security services, roadmap, and a live demo
+    on secure device provisioning for i.MX 93 platforms
+  doc_type: Training
+  url: https://www.nxp.com/webapp/Download?colCode=CWE-EDGELOCK2GO-MARCH2026&location=null
+  image: ''
+  soc:
+  - imx8ulp
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []
+- id: el2go_proxy_demo_video
+  title: '[Video] EdgeLock 2GO Service for Protecting IIOT Devices with Proxy flow
+    demo'
+  description: Update on EdgeLock 2GO security services, roadmap, and a live demo
+    on secure device provisioning for i.MX 93 platforms
+  doc_type: Training
+  url: https://www.nxp.com/webapp/secure/multiDownload.sp?colCode=CWE-EDGELOCK2GO-MARCH2026-VID
+  image: ''
+  soc:
+  - imx8ulp
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []
+- id: el2go_cloud_demo_ppt
+  title: '[PPT]  EdgeLock 2GO: NXP Provisioning and Credential Management Service
+    Training with Cloud flow demo'
+  description: Discover how the EdgeLock 2GO service can be used for provisioning
+    the latest NXP microcontroller and microprocessors such as the MCX-N or i.MX 93
+  doc_type: Training
+  url: https://www.nxp.com/webapp/Download?colCode=CWE-EDGELOCK-2GO-NXP-PROVISIONING-DISTY&location=null
+  image: ''
+  soc:
+  - imx8ulp
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []
+- id: el2go_cloud_demo_video
+  title: '[Video] EdgeLock 2GO: NXP Provisioning and Credential Management Service
+    Training with Cloud flow demo'
+  description: Discover how the EdgeLock 2GO service can be used for provisioning
+    the latest NXP microcontroller and microprocessors such as the MCX-N or i.MX 93
+  doc_type: Training
+  url: https://www.nxp.com/webapp/Download?colCode=CWE-EDGELOCK-2GO-NXP-PROVISIONING-VID-DISTY
+  image: ''
+  soc:
+  - imx8ulp
   - imx91
   - imx93
   - imx943
