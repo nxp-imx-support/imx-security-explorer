@@ -183,7 +183,7 @@ documents:
 - id: imx943_srm
   title: Security Reference Manual
   doc_type: Reference Manual
-  url: https://www.nxp.com/products/i.MX943#myDocument
+  url: https://www.nxp.com/products/i.MX94#myDocument
   description: Comprehensive security reference documentation for i.MX943 processor,
     covering security features, implementations, and best practices.
   image: ''
@@ -193,7 +193,7 @@ documents:
 - id: imx943_ele_ug
   title: EdgeLock Enclave User Guide
   doc_type: User Guide
-  url: https://www.nxp.com/products/i.MX943#myDocument
+  url: https://www.nxp.com/products/i.MX94#myDocument
   description: User guide for EdgeLock Enclave on i.MX943, providing instructions
     for ELE integration and usage.
   image: ''

@@ -21,7 +21,7 @@ documents:
     on i.MX SoCs with EdgeLock Secure Enclave (ELE-AP), including debug authentication
     protocols, credential management, and procedures for enabling secure JTAG access.
   doc_type: Application Note
-  url: https://www.nxp.com/webapp/Download?colCode=AN13994
+  url: https://www.nxp.com/webapp/Download?colCode=AN14579&location=null&isHTMLorPDF=HTML
   image: ''
   soc:
   - imx8ulp

@@ -119,3 +119,32 @@ documents:
   - imx943
   - imx95
   use-case: []
+- id: an12642
+  title: EdgeLock 2GO Developer Guide
+  description: "Leverage the EdgeLock 2GO REST API to create, update, delete\r\nand\
+    \ manage resources on the platform"
+  doc_type: User Guide
+  url: https://www.nxp.com/webapp/Download?colCode=AN12642
+  image: ''
+  soc:
+  - imx8ulp
+  - imx91
+  - imx93
+  - imx943
+  - imx95
+  use-case: []
+- id: an12691
+  title: EdgeLock 2GO Introduction
+  description: This document introduces EdgeLock 2GO, an EdgeLock 2GO service that
+    simplifies the provisioning of credentials in IoT devices equipped with EdgeLock
+    SE05x secure elements or EdgeLock secure enclave equipped devices.
+  doc_type: Reference Manual
+  url: https://www.nxp.com/webapp/sps/download/license.jsp?colCode=AN12691&appType=file1&DOWNLOAD_ID=null
+  image: ''
+  soc:
+  - imx95
+  - imx943
+  - imx93
+  - imx91
+  - imx8ulp
+  use-case: []

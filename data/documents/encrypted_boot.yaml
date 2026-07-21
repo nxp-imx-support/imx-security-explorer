@@ -99,7 +99,7 @@ documents:
 - id: an12601
   title: OTFAD - On The Fly AES Decryption on i.MX 7ULP
   doc_type: Application Note
-  url: https://www.nxp.com/docs/en/application-note/AN12601.pdf
+  url: https://www.nxp.com/webapp/Download?colCode=AN12601&location=null
   description: Describes On-The-Fly AES Decryption (OTFAD) support in the i.MX 7ULP
     Application Processor.
   image: ''

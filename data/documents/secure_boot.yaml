@@ -87,32 +87,6 @@ documents:
   soc:
   - imx8ulp
   use-case: []
-- id: cst_hsm
-  title: Using Code Signing Tool with Hardware Security Module
-  description: Hardware Security Module backend exposed to extend the usage of CST
-    with an external HSM.
-  doc_type: User Guide
-  url: https://www.nxp.com/webapp/Download?colCode=IMX_CST_TOOL_NEW&location=null
-  image: ''
-  soc:
-  - imx6sl
-  - imx6sll
-  - imx6s
-  - imx6dl
-  - imx6q
-  - imx6qp
-  - imx6sx
-  - imx6ul
-  - imx6ull
-  - imx6ulz
-  - imx7d
-  - imx7ulp
-  - imx8mm
-  - imx8mn
-  - imx8mp
-  - imx8mq
-  - imx8qm
-  use-case: []
 - id: cst-hsm-hab
   title: Using HSM Mode for Code Signing in HAB Devices
   description: 'Offline HSM code signing support for HABv4-based devices. Described

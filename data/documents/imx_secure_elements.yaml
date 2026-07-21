@@ -16,7 +16,7 @@ documents:
 - id: an12397
   title: Quick Start Guide for EdgeLock SE050 and i.MX 6UltraLite
   doc_type: Application Note
-  url: https://www.nxp.com/docs/en/application-note/AN12397-Quick_start_guide_i.mx6ultralite.pdf
+  url: https://www.nxp.com/docs/en/application-note/AN12397.pdf
   description: Quick start guide for interfacing EdgeLock SE050 Secure Element with
     i.MX 6UltraLite.
   image: ''
